@@ -3,7 +3,9 @@ This repository contains code and data for the project of "data-driven predictio
 
 ## Description
 
-[Provide a detailed description of your project, including its purpose, features, and any other relevant information. This section should give readers an overview of what your project is about.]
+This project focuses on training a data-driven model to predict hourly load profiles of heterogeneous and numerous electricity end users. The aim is to leverage the time-of-use energy bill, which provides valuable insights into the consumption patterns of the end users. A regression model is developed to effectively map energy bills to their corresponding load profiles.
+
+The project includes an exploratory data analysis (EDA) phase to gain insights into the dataset and understand the characteristics of the electricity consumption patterns. The EDA is performed on a training/testing dataset, while the detailed implementation and training of the predictive model will be provided upon publication.
 
 ## Table of Contents
 
@@ -13,7 +15,16 @@ This repository contains code and data for the project of "data-driven predictio
 
 ## Usage
 
-[Provide examples and instructions on how to use your project. Include code snippets, screenshots, or any other helpful information to guide users.]
+To use this project:
+
+1. Download or clone the repository to your local machine.
+2. Run the Jupyter Notebook file [EDA.ipynb](EDA.ypynb) to access the exploratory data analysis (EDA) notebook.
+
+Note: Currently, only the notebook for the exploratory data analysis is available in this repository. The complete dataset and other project files will be provided upon publication. Stay tuned for updates on how to access the full dataset.
+
+If you have any questions or need further assistance, please contact the project author.
+
+Thank you!
 
 ## License
 
@@ -23,7 +34,7 @@ This repository contains code and data for the project of "data-driven predictio
 ### Code
 The code in this project is licensed under the [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/) license. This means that you are free to use, modify, and distribute the code for any purpose, including commercial use, as long as you provide attribution to the original author(s), by citing the following reference:
 
-> P. Lazzeroni, G. Lorenti and M. Repetto, "A data-driven approach to predict hourly load profiles from time-of-use electricity bills", preprint submitted to IEEE Access, 2023, [Crossref](preprint_a_data_driven_approach_to_predict_hourly_load_profiles_from_time_of_use_electricity_bills.pdf).
+> P. Lazzeroni, G. Lorenti and M. Repetto, "A data-driven approach to predict hourly load profiles from time-of-use electricity bills", preprint submitted to IEEE Access, 2023, [[Crossref]](preprint_a_data_driven_approach_to_predict_hourly_load_profiles_from_time_of_use_electricity_bills.pdf).
 
 **Note: This paper is currently under consideration for publication.**
 
@@ -36,7 +47,7 @@ Please note that the data contained in the CSV files should be referenced as fol
 
 **Note: This paper is currently under consideration for publication.**
 
-For more details, please refer to the [LICENSE.md](LICENSE.md) file for the code license and the [LICENSE_DATA.md](DATA_LICENSE.md) file for the data license.
+For more details, please refer to the [LICENSE.md](LICENSE.md) file for the code license and the [LICENSE_DATA.md](LICENSE_DATA.md) file for the data license.
 
 ## Contact
 

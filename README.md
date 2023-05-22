@@ -18,7 +18,7 @@ The project includes an exploratory data analysis (EDA) phase to gain insights i
 To use this project:
 
 1. Download or clone the repository to your local machine.
-2. Run the Jupyter Notebook file [EDA.ipynb](EDA.ypynb) to access the exploratory data analysis (EDA) notebook.
+2. Run the Jupyter Notebook file [eda.ipynb](eda.ypynb) to access the exploratory data analysis (EDA) notebook.
 
 Note: Currently, only the notebook for the exploratory data analysis is available in this repository. The complete dataset and other project files will be provided upon publication. Stay tuned for updates on how to access the full dataset.
 

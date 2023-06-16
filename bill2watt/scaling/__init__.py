@@ -1,0 +1,1 @@
+from bill2watt.scaling import flat

@@ -47,18 +47,24 @@ class SLPPredictor(BasePredictor):
 
     Attributes
     ----------
-    x_data : pandas.DataFrame or None
-        ToU energy consumption values associated with the SLPs.
-    y_data : pandas.DataFrame
-        Typical load profiles of the Standard Load Profiles (SLPs).
+    x_data (property) : pandas.DataFrame or None
+        ToU energy consumption values of the training points.
+        If None, default values are used.
+    y_data (property) : pandas.DataFrame or None
+        Typical load profiles of the training points.
+        If None, default values are used.
 
     Methods
     -------
     predict(x, key, nd=None, scaler=None)
         Evaluate typical load profiles based on ToU energy consumption values
         and using the SLPs.
-    add_data_points(x, y)
+    add_data(x, y)
         Add new data points to the predictor.
+
+    See Also
+    --------
+    BasePredictor : Base class for typical load profile predictors.
     """
 
     def __init__(self, x_data=None, y_data=None):
@@ -68,7 +74,7 @@ class SLPPredictor(BasePredictor):
 
         super().__init__(x_data, y_data)
 
-    def predict(self, x, key, nd=None, scaler=None):
+    def predict(self, x, key):
         """
         Evaluate typical load profiles in multiple points, based on ToU energy
         consumption values, using the SLPs.
@@ -77,14 +83,8 @@ class SLPPredictor(BasePredictor):
         ----------
         x : array-like
             ToU energy consumption values of the point(s) to predict.
-        nd : array-like or None, optional
-            Number of days of each day-type for each point.
-            Only used if 'scaler' is not None. Default is None.
         key : tuple or list of tuples
             Key values related to the SLP associated with each point.
-        scaler : callable or None, optional
-            Scaling function to be applied to the predicted load profiles.
-            Default is None, meaning that no scaling is performed.
 
         Returns
         -------
@@ -103,15 +103,7 @@ class SLPPredictor(BasePredictor):
             not present in the model data.
         """
         # Check consistency of input data
-        x, nd, n_points, mono_dim = self.check_input_data(x, nd)
-
-        # If scaling is required, nd cannot be None as needed for scaling
-        if scaler is not None:
-            assert nd is not None, \
-                "'nd' cannot be None, since needed for scaling."
-
-        # Transform 'nd' to list of None for compatibility with zip
-        nd = [None] * n_points if nd is None else nd
+        x, n_points, mono_dim = self._validate_input(x)
 
         # Check that right number of correct keys is provided
         key = (key,) if n_points == 1 and mono_dim else key
@@ -122,17 +114,11 @@ class SLPPredictor(BasePredictor):
         y_pred = []
 
         # "Predict" typical load profile of each point using SLPs
-        for x_, nd_, key_ in zip(x, nd, key):
+        for x_, key_ in zip(x, key):
             assert key_ in self.y_data.index, \
                 "Key {} is not present in the SLP index.".format(key_)
 
-            y_pred_ = self.y_data.loc[key_, :].values
-
-            # Scale, if necessary
-            if scaler is not None:
-                y_pred_ = scaler(y=y_pred_, x_des=x_, nd=nd_)
-
-            y_pred.append(y_pred_)
+            y_pred.append(self.y_data.loc[key_, :].values)
 
         if mono_dim:
             return np.array(y_pred)[0]
@@ -142,14 +128,8 @@ class SLPPredictor(BasePredictor):
     def _fit(self):
         """
         Dummy method indicating that fitting is not required.
-
-        Raises
-        ------
-        NotImplementedError
-            Always raised to indicate that fitting is not needed.
         """
-        raise NotImplementedError("Fitting is not required. Use the "
-                                  "'add_data_point' method to add SLPs.")
+        print("Fitting is not required. Use 'add_data' method to add SLPs.")
 
 
 # -------------------------------------------------------------------- EXAMPLE
@@ -159,13 +139,13 @@ if __name__ == "__main__":
     from bill2watt.scaling import flat
 
     # Example usage
-    slp_predictor = SLPPredictor()
+    predictor = SLPPredictor()
 
     # Example usage with one point
     x = np.array([1, 2, 3])
     nd = np.array([22, 4, 5])
     key = ('bta', 1)
-    y = slp_predictor.predict(x, key, nd)
+    y = predictor.predict(x, key)
     print("1 point evaluated, output shape: ", y.shape)
     plt.plot(y)
     plt.show()
@@ -174,7 +154,7 @@ if __name__ == "__main__":
     x = np.array([[1, 2, 3], [4, 5, 6]])
     nd = np.array([[22, 4, 5], [22, 4, 5]])
     key = (('bta', 1), ('bta', 2))
-    y = slp_predictor.predict(x, key,  nd, scaler=flat.evaluate)
+    y = predictor.predict(x, key)
     print("2 points evaluated, output shape: ", y.shape)
     plt.plot(y.T)
     plt.show()

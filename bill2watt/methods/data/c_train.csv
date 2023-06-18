@@ -1,5 +1,4 @@
 user;month;type;class;category
-bta5_6;0;bta;bta5;cultural_and_sports
 bta5_6;1;bta;bta5;cultural_and_sports
 bta5_6;2;bta;bta5;cultural_and_sports
 bta5_6;3;bta;bta5;cultural_and_sports
@@ -11,7 +10,7 @@ bta5_6;8;bta;bta5;cultural_and_sports
 bta5_6;9;bta;bta5;cultural_and_sports
 bta5_6;10;bta;bta5;cultural_and_sports
 bta5_6;11;bta;bta5;cultural_and_sports
-bta4_2;0;bta;bta4;residential
+bta5_6;12;bta;bta5;cultural_and_sports
 bta4_2;1;bta;bta4;residential
 bta4_2;2;bta;bta4;residential
 bta4_2;3;bta;bta4;residential
@@ -23,7 +22,7 @@ bta4_2;8;bta;bta4;residential
 bta4_2;9;bta;bta4;residential
 bta4_2;10;bta;bta4;residential
 bta4_2;11;bta;bta4;residential
-bta3_9;0;bta;bta3;commercial
+bta4_2;12;bta;bta4;residential
 bta3_9;1;bta;bta3;commercial
 bta3_9;2;bta;bta3;commercial
 bta3_9;3;bta;bta3;commercial
@@ -35,7 +34,7 @@ bta3_9;8;bta;bta3;commercial
 bta3_9;9;bta;bta3;commercial
 bta3_9;10;bta;bta3;commercial
 bta3_9;11;bta;bta3;commercial
-bta5_8;0;bta;bta5;office
+bta3_9;12;bta;bta3;commercial
 bta5_8;1;bta;bta5;office
 bta5_8;2;bta;bta5;office
 bta5_8;3;bta;bta5;office
@@ -47,7 +46,7 @@ bta5_8;8;bta;bta5;office
 bta5_8;9;bta;bta5;office
 bta5_8;10;bta;bta5;office
 bta5_8;11;bta;bta5;office
-dom3_2;0;dom;dom3;household
+bta5_8;12;bta;bta5;office
 dom3_2;1;dom;dom3;household
 dom3_2;2;dom;dom3;household
 dom3_2;3;dom;dom3;household
@@ -59,7 +58,7 @@ dom3_2;8;dom;dom3;household
 dom3_2;9;dom;dom3;household
 dom3_2;10;dom;dom3;household
 dom3_2;11;dom;dom3;household
-bta4_9;0;bta;bta4;residential
+dom3_2;12;dom;dom3;household
 bta4_9;1;bta;bta4;residential
 bta4_9;2;bta;bta4;residential
 bta4_9;3;bta;bta4;residential
@@ -71,7 +70,7 @@ bta4_9;8;bta;bta4;residential
 bta4_9;9;bta;bta4;residential
 bta4_9;10;bta;bta4;residential
 bta4_9;11;bta;bta4;residential
-dom3_6;0;dom;dom3;household
+bta4_9;12;bta;bta4;residential
 dom3_6;1;dom;dom3;household
 dom3_6;2;dom;dom3;household
 dom3_6;3;dom;dom3;household
@@ -83,7 +82,7 @@ dom3_6;8;dom;dom3;household
 dom3_6;9;dom;dom3;household
 dom3_6;10;dom;dom3;household
 dom3_6;11;dom;dom3;household
-bta6l_c1;0;bta;bta6;municipal
+dom3_6;12;dom;dom3;household
 bta6l_c1;1;bta;bta6;municipal
 bta6l_c1;2;bta;bta6;municipal
 bta6l_c1;3;bta;bta6;municipal
@@ -95,12 +94,12 @@ bta6l_c1;8;bta;bta6;municipal
 bta6l_c1;9;bta;bta6;municipal
 bta6l_c1;10;bta;bta6;municipal
 bta6l_c1;11;bta;bta6;municipal
-bta3_8;4;bta;bta3;commercial
+bta6l_c1;12;bta;bta6;municipal
 bta3_8;5;bta;bta3;commercial
 bta3_8;6;bta;bta3;commercial
 bta3_8;7;bta;bta3;commercial
 bta3_8;8;bta;bta3;commercial
-bta1_2;0;bta;bta1;residential
+bta3_8;9;bta;bta3;commercial
 bta1_2;1;bta;bta1;residential
 bta1_2;2;bta;bta1;residential
 bta1_2;3;bta;bta1;residential
@@ -112,7 +111,7 @@ bta1_2;8;bta;bta1;residential
 bta1_2;9;bta;bta1;residential
 bta1_2;10;bta;bta1;residential
 bta1_2;11;bta;bta1;residential
-bta6_3;0;bta;bta6;commercial
+bta1_2;12;bta;bta1;residential
 bta6_3;1;bta;bta6;commercial
 bta6_3;2;bta;bta6;commercial
 bta6_3;3;bta;bta6;commercial
@@ -124,7 +123,7 @@ bta6_3;8;bta;bta6;commercial
 bta6_3;9;bta;bta6;commercial
 bta6_3;10;bta;bta6;commercial
 bta6_3;11;bta;bta6;commercial
-dom2_2;0;dom;dom1_2;household
+bta6_3;12;bta;bta6;commercial
 dom2_2;1;dom;dom1_2;household
 dom2_2;2;dom;dom1_2;household
 dom2_2;3;dom;dom1_2;household
@@ -136,7 +135,7 @@ dom2_2;8;dom;dom1_2;household
 dom2_2;9;dom;dom1_2;household
 dom2_2;10;dom;dom1_2;household
 dom2_2;11;dom;dom1_2;household
-dom3_10;0;dom;dom3;household
+dom2_2;12;dom;dom1_2;household
 dom3_10;1;dom;dom3;household
 dom3_10;2;dom;dom3;household
 dom3_10;3;dom;dom3;household
@@ -148,7 +147,7 @@ dom3_10;8;dom;dom3;household
 dom3_10;9;dom;dom3;household
 dom3_10;10;dom;dom3;household
 dom3_10;11;dom;dom3;household
-bta3_7;0;bta;bta3;cultural_and_sports
+dom3_10;12;dom;dom3;household
 bta3_7;1;bta;bta3;cultural_and_sports
 bta3_7;2;bta;bta3;cultural_and_sports
 bta3_7;3;bta;bta3;cultural_and_sports
@@ -160,7 +159,7 @@ bta3_7;8;bta;bta3;cultural_and_sports
 bta3_7;9;bta;bta3;cultural_and_sports
 bta3_7;10;bta;bta3;cultural_and_sports
 bta3_7;11;bta;bta3;cultural_and_sports
-bta1_10;0;bta;bta1;cultural_and_sports
+bta3_7;12;bta;bta3;cultural_and_sports
 bta1_10;1;bta;bta1;cultural_and_sports
 bta1_10;2;bta;bta1;cultural_and_sports
 bta1_10;3;bta;bta1;cultural_and_sports
@@ -168,10 +167,10 @@ bta1_10;4;bta;bta1;cultural_and_sports
 bta1_10;5;bta;bta1;cultural_and_sports
 bta1_10;6;bta;bta1;cultural_and_sports
 bta1_10;7;bta;bta1;cultural_and_sports
-bta1_10;9;bta;bta1;cultural_and_sports
+bta1_10;8;bta;bta1;cultural_and_sports
 bta1_10;10;bta;bta1;cultural_and_sports
 bta1_10;11;bta;bta1;cultural_and_sports
-bta6l_5;0;bta;bta6;commercial
+bta1_10;12;bta;bta1;cultural_and_sports
 bta6l_5;1;bta;bta6;commercial
 bta6l_5;2;bta;bta6;commercial
 bta6l_5;3;bta;bta6;commercial
@@ -183,7 +182,7 @@ bta6l_5;8;bta;bta6;commercial
 bta6l_5;9;bta;bta6;commercial
 bta6l_5;10;bta;bta6;commercial
 bta6l_5;11;bta;bta6;commercial
-bta5_1;0;bta;bta5;office
+bta6l_5;12;bta;bta6;commercial
 bta5_1;1;bta;bta5;office
 bta5_1;2;bta;bta5;office
 bta5_1;3;bta;bta5;office
@@ -195,7 +194,7 @@ bta5_1;8;bta;bta5;office
 bta5_1;9;bta;bta5;office
 bta5_1;10;bta;bta5;office
 bta5_1;11;bta;bta5;office
-bta1_c1;0;bta;bta1;cultural_and_sports
+bta5_1;12;bta;bta5;office
 bta1_c1;1;bta;bta1;cultural_and_sports
 bta1_c1;2;bta;bta1;cultural_and_sports
 bta1_c1;3;bta;bta1;cultural_and_sports
@@ -207,7 +206,7 @@ bta1_c1;8;bta;bta1;cultural_and_sports
 bta1_c1;9;bta;bta1;cultural_and_sports
 bta1_c1;10;bta;bta1;cultural_and_sports
 bta1_c1;11;bta;bta1;cultural_and_sports
-bta4_1;0;bta;bta4;commercial
+bta1_c1;12;bta;bta1;cultural_and_sports
 bta4_1;1;bta;bta4;commercial
 bta4_1;2;bta;bta4;commercial
 bta4_1;3;bta;bta4;commercial
@@ -219,7 +218,7 @@ bta4_1;8;bta;bta4;commercial
 bta4_1;9;bta;bta4;commercial
 bta4_1;10;bta;bta4;commercial
 bta4_1;11;bta;bta4;commercial
-bta6l_4;0;bta;bta6;commercial
+bta4_1;12;bta;bta4;commercial
 bta6l_4;1;bta;bta6;commercial
 bta6l_4;2;bta;bta6;commercial
 bta6l_4;3;bta;bta6;commercial
@@ -231,7 +230,7 @@ bta6l_4;8;bta;bta6;commercial
 bta6l_4;9;bta;bta6;commercial
 bta6l_4;10;bta;bta6;commercial
 bta6l_4;11;bta;bta6;commercial
-bta4_5;0;bta;bta4;residential
+bta6l_4;12;bta;bta6;commercial
 bta4_5;1;bta;bta4;residential
 bta4_5;2;bta;bta4;residential
 bta4_5;3;bta;bta4;residential
@@ -243,7 +242,7 @@ bta4_5;8;bta;bta4;residential
 bta4_5;9;bta;bta4;residential
 bta4_5;10;bta;bta4;residential
 bta4_5;11;bta;bta4;residential
-bta4_4;0;bta;bta4;residential
+bta4_5;12;bta;bta4;residential
 bta4_4;1;bta;bta4;residential
 bta4_4;2;bta;bta4;residential
 bta4_4;3;bta;bta4;residential
@@ -255,18 +254,18 @@ bta4_4;8;bta;bta4;residential
 bta4_4;9;bta;bta4;residential
 bta4_4;10;bta;bta4;residential
 bta4_4;11;bta;bta4;residential
-bta2_c4;0;bta;bta2;cultural_and_sports
+bta4_4;12;bta;bta4;residential
 bta2_c4;1;bta;bta2;cultural_and_sports
 bta2_c4;2;bta;bta2;cultural_and_sports
 bta2_c4;3;bta;bta2;cultural_and_sports
 bta2_c4;4;bta;bta2;cultural_and_sports
-bta2_c4;6;bta;bta2;cultural_and_sports
+bta2_c4;5;bta;bta2;cultural_and_sports
 bta2_c4;7;bta;bta2;cultural_and_sports
 bta2_c4;8;bta;bta2;cultural_and_sports
 bta2_c4;9;bta;bta2;cultural_and_sports
 bta2_c4;10;bta;bta2;cultural_and_sports
 bta2_c4;11;bta;bta2;cultural_and_sports
-bta3_c2;0;bta;bta3;cultural_and_sports
+bta2_c4;12;bta;bta2;cultural_and_sports
 bta3_c2;1;bta;bta3;cultural_and_sports
 bta3_c2;2;bta;bta3;cultural_and_sports
 bta3_c2;3;bta;bta3;cultural_and_sports
@@ -278,7 +277,7 @@ bta3_c2;8;bta;bta3;cultural_and_sports
 bta3_c2;9;bta;bta3;cultural_and_sports
 bta3_c2;10;bta;bta3;cultural_and_sports
 bta3_c2;11;bta;bta3;cultural_and_sports
-bta2_6;0;bta;bta2;office
+bta3_c2;12;bta;bta3;cultural_and_sports
 bta2_6;1;bta;bta2;office
 bta2_6;2;bta;bta2;office
 bta2_6;3;bta;bta2;office
@@ -290,7 +289,7 @@ bta2_6;8;bta;bta2;office
 bta2_6;9;bta;bta2;office
 bta2_6;10;bta;bta2;office
 bta2_6;11;bta;bta2;office
-bta2_10;0;bta;bta2;commercial
+bta2_6;12;bta;bta2;office
 bta2_10;1;bta;bta2;commercial
 bta2_10;2;bta;bta2;commercial
 bta2_10;3;bta;bta2;commercial
@@ -302,7 +301,7 @@ bta2_10;8;bta;bta2;commercial
 bta2_10;9;bta;bta2;commercial
 bta2_10;10;bta;bta2;commercial
 bta2_10;11;bta;bta2;commercial
-dom1_1;0;dom;dom1_2;household
+bta2_10;12;bta;bta2;commercial
 dom1_1;1;dom;dom1_2;household
 dom1_1;2;dom;dom1_2;household
 dom1_1;3;dom;dom1_2;household
@@ -314,7 +313,7 @@ dom1_1;8;dom;dom1_2;household
 dom1_1;9;dom;dom1_2;household
 dom1_1;10;dom;dom1_2;household
 dom1_1;11;dom;dom1_2;household
-bta3_5;0;bta;bta3;commercial
+dom1_1;12;dom;dom1_2;household
 bta3_5;1;bta;bta3;commercial
 bta3_5;2;bta;bta3;commercial
 bta3_5;3;bta;bta3;commercial
@@ -326,7 +325,7 @@ bta3_5;8;bta;bta3;commercial
 bta3_5;9;bta;bta3;commercial
 bta3_5;10;bta;bta3;commercial
 bta3_5;11;bta;bta3;commercial
-bta2_7;3;bta;bta2;office
+bta3_5;12;bta;bta3;commercial
 bta2_7;4;bta;bta2;office
 bta2_7;5;bta;bta2;office
 bta2_7;6;bta;bta2;office
@@ -335,7 +334,7 @@ bta2_7;8;bta;bta2;office
 bta2_7;9;bta;bta2;office
 bta2_7;10;bta;bta2;office
 bta2_7;11;bta;bta2;office
-dom4_4;0;dom;dom4;household
+bta2_7;12;bta;bta2;office
 dom4_4;1;dom;dom4;household
 dom4_4;2;dom;dom4;household
 dom4_4;3;dom;dom4;household
@@ -345,8 +344,8 @@ dom4_4;6;dom;dom4;household
 dom4_4;7;dom;dom4;household
 dom4_4;8;dom;dom4;household
 dom4_4;9;dom;dom4;household
-dom4_4;11;dom;dom4;household
-dom4_9;0;dom;dom4;household
+dom4_4;10;dom;dom4;household
+dom4_4;12;dom;dom4;household
 dom4_9;1;dom;dom4;household
 dom4_9;2;dom;dom4;household
 dom4_9;3;dom;dom4;household
@@ -358,7 +357,7 @@ dom4_9;8;dom;dom4;household
 dom4_9;9;dom;dom4;household
 dom4_9;10;dom;dom4;household
 dom4_9;11;dom;dom4;household
-bta1_3;0;bta;bta1;office
+dom4_9;12;dom;dom4;household
 bta1_3;1;bta;bta1;office
 bta1_3;2;bta;bta1;office
 bta1_3;3;bta;bta1;office
@@ -370,7 +369,7 @@ bta1_3;8;bta;bta1;office
 bta1_3;9;bta;bta1;office
 bta1_3;10;bta;bta1;office
 bta1_3;11;bta;bta1;office
-bta6l_2;0;bta;bta6;office
+bta1_3;12;bta;bta1;office
 bta6l_2;1;bta;bta6;office
 bta6l_2;2;bta;bta6;office
 bta6l_2;3;bta;bta6;office
@@ -382,7 +381,7 @@ bta6l_2;8;bta;bta6;office
 bta6l_2;9;bta;bta6;office
 bta6l_2;10;bta;bta6;office
 bta6l_2;11;bta;bta6;office
-bta6_c1;0;bta;bta6;municipal
+bta6l_2;12;bta;bta6;office
 bta6_c1;1;bta;bta6;municipal
 bta6_c1;2;bta;bta6;municipal
 bta6_c1;3;bta;bta6;municipal
@@ -394,7 +393,7 @@ bta6_c1;8;bta;bta6;municipal
 bta6_c1;9;bta;bta6;municipal
 bta6_c1;10;bta;bta6;municipal
 bta6_c1;11;bta;bta6;municipal
-dom4_5;0;dom;dom4;household
+bta6_c1;12;bta;bta6;municipal
 dom4_5;1;dom;dom4;household
 dom4_5;2;dom;dom4;household
 dom4_5;3;dom;dom4;household
@@ -406,7 +405,7 @@ dom4_5;8;dom;dom4;household
 dom4_5;9;dom;dom4;household
 dom4_5;10;dom;dom4;household
 dom4_5;11;dom;dom4;household
-dom4_6;0;dom;dom4;household
+dom4_5;12;dom;dom4;household
 dom4_6;1;dom;dom4;household
 dom4_6;2;dom;dom4;household
 dom4_6;3;dom;dom4;household
@@ -418,7 +417,7 @@ dom4_6;8;dom;dom4;household
 dom4_6;9;dom;dom4;household
 dom4_6;10;dom;dom4;household
 dom4_6;11;dom;dom4;household
-dom2_6;0;dom;dom1_2;household
+dom4_6;12;dom;dom4;household
 dom2_6;1;dom;dom1_2;household
 dom2_6;2;dom;dom1_2;household
 dom2_6;3;dom;dom1_2;household
@@ -430,7 +429,7 @@ dom2_6;8;dom;dom1_2;household
 dom2_6;9;dom;dom1_2;household
 dom2_6;10;dom;dom1_2;household
 dom2_6;11;dom;dom1_2;household
-dom2_1;0;dom;dom1_2;household
+dom2_6;12;dom;dom1_2;household
 dom2_1;1;dom;dom1_2;household
 dom2_1;2;dom;dom1_2;household
 dom2_1;3;dom;dom1_2;household
@@ -442,17 +441,17 @@ dom2_1;8;dom;dom1_2;household
 dom2_1;9;dom;dom1_2;household
 dom2_1;10;dom;dom1_2;household
 dom2_1;11;dom;dom1_2;household
-bta5_10;0;bta;bta5;commercial
+dom2_1;12;dom;dom1_2;household
 bta5_10;1;bta;bta5;commercial
 bta5_10;2;bta;bta5;commercial
 bta5_10;3;bta;bta5;commercial
 bta5_10;4;bta;bta5;commercial
 bta5_10;5;bta;bta5;commercial
 bta5_10;6;bta;bta5;commercial
-bta5_10;8;bta;bta5;commercial
+bta5_10;7;bta;bta5;commercial
 bta5_10;9;bta;bta5;commercial
 bta5_10;10;bta;bta5;commercial
-bta5_3;0;bta;bta5;commercial
+bta5_10;11;bta;bta5;commercial
 bta5_3;1;bta;bta5;commercial
 bta5_3;2;bta;bta5;commercial
 bta5_3;3;bta;bta5;commercial
@@ -464,7 +463,7 @@ bta5_3;8;bta;bta5;commercial
 bta5_3;9;bta;bta5;commercial
 bta5_3;10;bta;bta5;commercial
 bta5_3;11;bta;bta5;commercial
-bta3_2;0;bta;bta3;commercial
+bta5_3;12;bta;bta5;commercial
 bta3_2;1;bta;bta3;commercial
 bta3_2;2;bta;bta3;commercial
 bta3_2;3;bta;bta3;commercial
@@ -476,7 +475,7 @@ bta3_2;8;bta;bta3;commercial
 bta3_2;9;bta;bta3;commercial
 bta3_2;10;bta;bta3;commercial
 bta3_2;11;bta;bta3;commercial
-bta6_1;0;bta;bta6;office
+bta3_2;12;bta;bta3;commercial
 bta6_1;1;bta;bta6;office
 bta6_1;2;bta;bta6;office
 bta6_1;3;bta;bta6;office
@@ -488,7 +487,7 @@ bta6_1;8;bta;bta6;office
 bta6_1;9;bta;bta6;office
 bta6_1;10;bta;bta6;office
 bta6_1;11;bta;bta6;office
-bta6_5;0;bta;bta6;commercial
+bta6_1;12;bta;bta6;office
 bta6_5;1;bta;bta6;commercial
 bta6_5;2;bta;bta6;commercial
 bta6_5;3;bta;bta6;commercial
@@ -500,7 +499,7 @@ bta6_5;8;bta;bta6;commercial
 bta6_5;9;bta;bta6;commercial
 bta6_5;10;bta;bta6;commercial
 bta6_5;11;bta;bta6;commercial
-dom3_3;0;dom;dom3;household
+bta6_5;12;bta;bta6;commercial
 dom3_3;1;dom;dom3;household
 dom3_3;2;dom;dom3;household
 dom3_3;3;dom;dom3;household
@@ -512,7 +511,7 @@ dom3_3;8;dom;dom3;household
 dom3_3;9;dom;dom3;household
 dom3_3;10;dom;dom3;household
 dom3_3;11;dom;dom3;household
-bta3_c3;0;bta;bta3;municipal
+dom3_3;12;dom;dom3;household
 bta3_c3;1;bta;bta3;municipal
 bta3_c3;2;bta;bta3;municipal
 bta3_c3;3;bta;bta3;municipal
@@ -520,14 +519,14 @@ bta3_c3;4;bta;bta3;municipal
 bta3_c3;5;bta;bta3;municipal
 bta3_c3;6;bta;bta3;municipal
 bta3_c3;7;bta;bta3;municipal
-bta3_c3;9;bta;bta3;municipal
+bta3_c3;8;bta;bta3;municipal
 bta3_c3;10;bta;bta3;municipal
 bta3_c3;11;bta;bta3;municipal
-bta2_8;2;bta;bta2;office
-bta2_8;6;bta;bta2;office
+bta3_c3;12;bta;bta3;municipal
+bta2_8;3;bta;bta2;office
 bta2_8;7;bta;bta2;office
-bta2_8;11;bta;bta2;office
-bta1_6;0;bta;bta1;residential
+bta2_8;8;bta;bta2;office
+bta2_8;12;bta;bta2;office
 bta1_6;1;bta;bta1;residential
 bta1_6;2;bta;bta1;residential
 bta1_6;3;bta;bta1;residential
@@ -539,7 +538,7 @@ bta1_6;8;bta;bta1;residential
 bta1_6;9;bta;bta1;residential
 bta1_6;10;bta;bta1;residential
 bta1_6;11;bta;bta1;residential
-bta4_c1;0;bta;bta4;municipal
+bta1_6;12;bta;bta1;residential
 bta4_c1;1;bta;bta4;municipal
 bta4_c1;2;bta;bta4;municipal
 bta4_c1;3;bta;bta4;municipal
@@ -551,8 +550,8 @@ bta4_c1;8;bta;bta4;municipal
 bta4_c1;9;bta;bta4;municipal
 bta4_c1;10;bta;bta4;municipal
 bta4_c1;11;bta;bta4;municipal
-bta5_4;0;bta;bta5;cultural_and_sports
-bta5_4;4;bta;bta5;cultural_and_sports
+bta4_c1;12;bta;bta4;municipal
+bta5_4;1;bta;bta5;cultural_and_sports
 bta5_4;5;bta;bta5;cultural_and_sports
 bta5_4;6;bta;bta5;cultural_and_sports
 bta5_4;7;bta;bta5;cultural_and_sports
@@ -560,7 +559,7 @@ bta5_4;8;bta;bta5;cultural_and_sports
 bta5_4;9;bta;bta5;cultural_and_sports
 bta5_4;10;bta;bta5;cultural_and_sports
 bta5_4;11;bta;bta5;cultural_and_sports
-dom2_5;0;dom;dom1_2;household
+bta5_4;12;bta;bta5;cultural_and_sports
 dom2_5;1;dom;dom1_2;household
 dom2_5;2;dom;dom1_2;household
 dom2_5;3;dom;dom1_2;household
@@ -572,7 +571,7 @@ dom2_5;8;dom;dom1_2;household
 dom2_5;9;dom;dom1_2;household
 dom2_5;10;dom;dom1_2;household
 dom2_5;11;dom;dom1_2;household
-dom3_4;0;dom;dom3;household
+dom2_5;12;dom;dom1_2;household
 dom3_4;1;dom;dom3;household
 dom3_4;2;dom;dom3;household
 dom3_4;3;dom;dom3;household
@@ -584,7 +583,7 @@ dom3_4;8;dom;dom3;household
 dom3_4;9;dom;dom3;household
 dom3_4;10;dom;dom3;household
 dom3_4;11;dom;dom3;household
-dom4_3;0;dom;dom4;household
+dom3_4;12;dom;dom3;household
 dom4_3;1;dom;dom4;household
 dom4_3;2;dom;dom4;household
 dom4_3;3;dom;dom4;household
@@ -596,7 +595,7 @@ dom4_3;8;dom;dom4;household
 dom4_3;9;dom;dom4;household
 dom4_3;10;dom;dom4;household
 dom4_3;11;dom;dom4;household
-bta3_4;0;bta;bta3;commercial
+dom4_3;12;dom;dom4;household
 bta3_4;1;bta;bta3;commercial
 bta3_4;2;bta;bta3;commercial
 bta3_4;3;bta;bta3;commercial
@@ -608,7 +607,7 @@ bta3_4;8;bta;bta3;commercial
 bta3_4;9;bta;bta3;commercial
 bta3_4;10;bta;bta3;commercial
 bta3_4;11;bta;bta3;commercial
-dom3_1;0;dom;dom3;household
+bta3_4;12;bta;bta3;commercial
 dom3_1;1;dom;dom3;household
 dom3_1;2;dom;dom3;household
 dom3_1;3;dom;dom3;household
@@ -620,7 +619,7 @@ dom3_1;8;dom;dom3;household
 dom3_1;9;dom;dom3;household
 dom3_1;10;dom;dom3;household
 dom3_1;11;dom;dom3;household
-bta4_7;0;bta;bta4;residential
+dom3_1;12;dom;dom3;household
 bta4_7;1;bta;bta4;residential
 bta4_7;2;bta;bta4;residential
 bta4_7;3;bta;bta4;residential
@@ -632,7 +631,7 @@ bta4_7;8;bta;bta4;residential
 bta4_7;9;bta;bta4;residential
 bta4_7;10;bta;bta4;residential
 bta4_7;11;bta;bta4;residential
-bta5_5;0;bta;bta5;commercial
+bta4_7;12;bta;bta4;residential
 bta5_5;1;bta;bta5;commercial
 bta5_5;2;bta;bta5;commercial
 bta5_5;3;bta;bta5;commercial
@@ -644,7 +643,7 @@ bta5_5;8;bta;bta5;commercial
 bta5_5;9;bta;bta5;commercial
 bta5_5;10;bta;bta5;commercial
 bta5_5;11;bta;bta5;commercial
-bta2_c2;1;bta;bta2;cultural_and_sports
+bta5_5;12;bta;bta5;commercial
 bta2_c2;2;bta;bta2;cultural_and_sports
 bta2_c2;3;bta;bta2;cultural_and_sports
 bta2_c2;4;bta;bta2;cultural_and_sports
@@ -652,8 +651,8 @@ bta2_c2;5;bta;bta2;cultural_and_sports
 bta2_c2;6;bta;bta2;cultural_and_sports
 bta2_c2;7;bta;bta2;cultural_and_sports
 bta2_c2;8;bta;bta2;cultural_and_sports
-bta2_c2;11;bta;bta2;cultural_and_sports
-bta1_4;0;bta;bta1;residential
+bta2_c2;9;bta;bta2;cultural_and_sports
+bta2_c2;12;bta;bta2;cultural_and_sports
 bta1_4;1;bta;bta1;residential
 bta1_4;2;bta;bta1;residential
 bta1_4;3;bta;bta1;residential
@@ -663,8 +662,8 @@ bta1_4;6;bta;bta1;residential
 bta1_4;7;bta;bta1;residential
 bta1_4;8;bta;bta1;residential
 bta1_4;9;bta;bta1;residential
-bta1_4;11;bta;bta1;residential
-bta1_5;0;bta;bta1;bta1
+bta1_4;10;bta;bta1;residential
+bta1_4;12;bta;bta1;residential
 bta1_5;1;bta;bta1;bta1
 bta1_5;2;bta;bta1;bta1
 bta1_5;3;bta;bta1;bta1
@@ -676,7 +675,7 @@ bta1_5;8;bta;bta1;bta1
 bta1_5;9;bta;bta1;bta1
 bta1_5;10;bta;bta1;bta1
 bta1_5;11;bta;bta1;bta1
-bta4_10;0;bta;bta4;residential
+bta1_5;12;bta;bta1;bta1
 bta4_10;1;bta;bta4;residential
 bta4_10;2;bta;bta4;residential
 bta4_10;3;bta;bta4;residential
@@ -688,7 +687,7 @@ bta4_10;8;bta;bta4;residential
 bta4_10;9;bta;bta4;residential
 bta4_10;10;bta;bta4;residential
 bta4_10;11;bta;bta4;residential
-dom4_1;0;dom;dom4;household
+bta4_10;12;bta;bta4;residential
 dom4_1;1;dom;dom4;household
 dom4_1;2;dom;dom4;household
 dom4_1;3;dom;dom4;household
@@ -700,7 +699,7 @@ dom4_1;8;dom;dom4;household
 dom4_1;9;dom;dom4;household
 dom4_1;10;dom;dom4;household
 dom4_1;11;dom;dom4;household
-bta6_c5;0;bta;bta6;cultural_and_sports
+dom4_1;12;dom;dom4;household
 bta6_c5;1;bta;bta6;cultural_and_sports
 bta6_c5;2;bta;bta6;cultural_and_sports
 bta6_c5;3;bta;bta6;cultural_and_sports
@@ -712,8 +711,8 @@ bta6_c5;8;bta;bta6;cultural_and_sports
 bta6_c5;9;bta;bta6;cultural_and_sports
 bta6_c5;10;bta;bta6;cultural_and_sports
 bta6_c5;11;bta;bta6;cultural_and_sports
-bta1_7;5;bta;bta1;office
-bta4_3;0;bta;bta4;residential
+bta6_c5;12;bta;bta6;cultural_and_sports
+bta1_7;6;bta;bta1;office
 bta4_3;1;bta;bta4;residential
 bta4_3;2;bta;bta4;residential
 bta4_3;3;bta;bta4;residential
@@ -725,7 +724,7 @@ bta4_3;8;bta;bta4;residential
 bta4_3;9;bta;bta4;residential
 bta4_3;10;bta;bta4;residential
 bta4_3;11;bta;bta4;residential
-bta2_4;0;bta;bta2;office
+bta4_3;12;bta;bta4;residential
 bta2_4;1;bta;bta2;office
 bta2_4;2;bta;bta2;office
 bta2_4;3;bta;bta2;office
@@ -737,7 +736,7 @@ bta2_4;8;bta;bta2;office
 bta2_4;9;bta;bta2;office
 bta2_4;10;bta;bta2;office
 bta2_4;11;bta;bta2;office
-bta6_c6;0;bta;bta6;municipal
+bta2_4;12;bta;bta2;office
 bta6_c6;1;bta;bta6;municipal
 bta6_c6;2;bta;bta6;municipal
 bta6_c6;3;bta;bta6;municipal
@@ -749,7 +748,7 @@ bta6_c6;8;bta;bta6;municipal
 bta6_c6;9;bta;bta6;municipal
 bta6_c6;10;bta;bta6;municipal
 bta6_c6;11;bta;bta6;municipal
-bta6l_3;0;bta;bta6;commercial
+bta6_c6;12;bta;bta6;municipal
 bta6l_3;1;bta;bta6;commercial
 bta6l_3;2;bta;bta6;commercial
 bta6l_3;3;bta;bta6;commercial
@@ -761,7 +760,7 @@ bta6l_3;8;bta;bta6;commercial
 bta6l_3;9;bta;bta6;commercial
 bta6l_3;10;bta;bta6;commercial
 bta6l_3;11;bta;bta6;commercial
-bta6_c4;0;bta;bta6;municipal
+bta6l_3;12;bta;bta6;commercial
 bta6_c4;1;bta;bta6;municipal
 bta6_c4;2;bta;bta6;municipal
 bta6_c4;3;bta;bta6;municipal
@@ -773,7 +772,7 @@ bta6_c4;8;bta;bta6;municipal
 bta6_c4;9;bta;bta6;municipal
 bta6_c4;10;bta;bta6;municipal
 bta6_c4;11;bta;bta6;municipal
-dom3_9;0;dom;dom3;household
+bta6_c4;12;bta;bta6;municipal
 dom3_9;1;dom;dom3;household
 dom3_9;2;dom;dom3;household
 dom3_9;3;dom;dom3;household
@@ -785,7 +784,7 @@ dom3_9;8;dom;dom3;household
 dom3_9;9;dom;dom3;household
 dom3_9;10;dom;dom3;household
 dom3_9;11;dom;dom3;household
-bta2_c1;0;bta;bta2;cultural_and_sports
+dom3_9;12;dom;dom3;household
 bta2_c1;1;bta;bta2;cultural_and_sports
 bta2_c1;2;bta;bta2;cultural_and_sports
 bta2_c1;3;bta;bta2;cultural_and_sports
@@ -797,7 +796,7 @@ bta2_c1;8;bta;bta2;cultural_and_sports
 bta2_c1;9;bta;bta2;cultural_and_sports
 bta2_c1;10;bta;bta2;cultural_and_sports
 bta2_c1;11;bta;bta2;cultural_and_sports
-bta2_9;0;bta;bta2;office
+bta2_c1;12;bta;bta2;cultural_and_sports
 bta2_9;1;bta;bta2;office
 bta2_9;2;bta;bta2;office
 bta2_9;3;bta;bta2;office
@@ -809,7 +808,7 @@ bta2_9;8;bta;bta2;office
 bta2_9;9;bta;bta2;office
 bta2_9;10;bta;bta2;office
 bta2_9;11;bta;bta2;office
-dom2_9;0;dom;dom1_2;household
+bta2_9;12;bta;bta2;office
 dom2_9;1;dom;dom1_2;household
 dom2_9;2;dom;dom1_2;household
 dom2_9;3;dom;dom1_2;household
@@ -821,8 +820,8 @@ dom2_9;8;dom;dom1_2;household
 dom2_9;9;dom;dom1_2;household
 dom2_9;10;dom;dom1_2;household
 dom2_9;11;dom;dom1_2;household
-bta2_5;3;bta;bta2;commercial
-bta2_c5;0;bta;bta2;municipal
+dom2_9;12;dom;dom1_2;household
+bta2_5;4;bta;bta2;commercial
 bta2_c5;1;bta;bta2;municipal
 bta2_c5;2;bta;bta2;municipal
 bta2_c5;3;bta;bta2;municipal
@@ -834,7 +833,7 @@ bta2_c5;8;bta;bta2;municipal
 bta2_c5;9;bta;bta2;municipal
 bta2_c5;10;bta;bta2;municipal
 bta2_c5;11;bta;bta2;municipal
-dom4_2;0;dom;dom4;household
+bta2_c5;12;bta;bta2;municipal
 dom4_2;1;dom;dom4;household
 dom4_2;2;dom;dom4;household
 dom4_2;3;dom;dom4;household
@@ -846,7 +845,7 @@ dom4_2;8;dom;dom4;household
 dom4_2;9;dom;dom4;household
 dom4_2;10;dom;dom4;household
 dom4_2;11;dom;dom4;household
-bta5_2;0;bta;bta5;residential
+dom4_2;12;dom;dom4;household
 bta5_2;1;bta;bta5;residential
 bta5_2;2;bta;bta5;residential
 bta5_2;3;bta;bta5;residential
@@ -858,7 +857,7 @@ bta5_2;8;bta;bta5;residential
 bta5_2;9;bta;bta5;residential
 bta5_2;10;bta;bta5;residential
 bta5_2;11;bta;bta5;residential
-bta3_10;0;bta;bta3;commercial
+bta5_2;12;bta;bta5;residential
 bta3_10;1;bta;bta3;commercial
 bta3_10;2;bta;bta3;commercial
 bta3_10;3;bta;bta3;commercial
@@ -870,7 +869,7 @@ bta3_10;8;bta;bta3;commercial
 bta3_10;9;bta;bta3;commercial
 bta3_10;10;bta;bta3;commercial
 bta3_10;11;bta;bta3;commercial
-bta5_c1;0;bta;bta5;cultural_and_sports
+bta3_10;12;bta;bta3;commercial
 bta5_c1;1;bta;bta5;cultural_and_sports
 bta5_c1;2;bta;bta5;cultural_and_sports
 bta5_c1;3;bta;bta5;cultural_and_sports
@@ -882,7 +881,7 @@ bta5_c1;8;bta;bta5;cultural_and_sports
 bta5_c1;9;bta;bta5;cultural_and_sports
 bta5_c1;10;bta;bta5;cultural_and_sports
 bta5_c1;11;bta;bta5;cultural_and_sports
-bta1_c3;0;bta;bta1;municipal
+bta5_c1;12;bta;bta5;cultural_and_sports
 bta1_c3;1;bta;bta1;municipal
 bta1_c3;2;bta;bta1;municipal
 bta1_c3;3;bta;bta1;municipal
@@ -894,7 +893,7 @@ bta1_c3;8;bta;bta1;municipal
 bta1_c3;9;bta;bta1;municipal
 bta1_c3;10;bta;bta1;municipal
 bta1_c3;11;bta;bta1;municipal
-dom3_7;0;dom;dom3;household
+bta1_c3;12;bta;bta1;municipal
 dom3_7;1;dom;dom3;household
 dom3_7;2;dom;dom3;household
 dom3_7;3;dom;dom3;household
@@ -906,7 +905,7 @@ dom3_7;8;dom;dom3;household
 dom3_7;9;dom;dom3;household
 dom3_7;10;dom;dom3;household
 dom3_7;11;dom;dom3;household
-bta3_1;0;bta;bta3;office
+dom3_7;12;dom;dom3;household
 bta3_1;1;bta;bta3;office
 bta3_1;2;bta;bta3;office
 bta3_1;3;bta;bta3;office
@@ -918,7 +917,7 @@ bta3_1;8;bta;bta3;office
 bta3_1;9;bta;bta3;office
 bta3_1;10;bta;bta3;office
 bta3_1;11;bta;bta3;office
-dom2_10;0;dom;dom1_2;household
+bta3_1;12;bta;bta3;office
 dom2_10;1;dom;dom1_2;household
 dom2_10;2;dom;dom1_2;household
 dom2_10;3;dom;dom1_2;household
@@ -930,7 +929,7 @@ dom2_10;8;dom;dom1_2;household
 dom2_10;9;dom;dom1_2;household
 dom2_10;10;dom;dom1_2;household
 dom2_10;11;dom;dom1_2;household
-dom2_7;0;dom;dom1_2;household
+dom2_10;12;dom;dom1_2;household
 dom2_7;1;dom;dom1_2;household
 dom2_7;2;dom;dom1_2;household
 dom2_7;3;dom;dom1_2;household
@@ -942,8 +941,8 @@ dom2_7;8;dom;dom1_2;household
 dom2_7;9;dom;dom1_2;household
 dom2_7;10;dom;dom1_2;household
 dom2_7;11;dom;dom1_2;household
-bta2_c3;6;bta;bta2;municipal
-bta2_1;0;bta;bta2;commercial
+dom2_7;12;dom;dom1_2;household
+bta2_c3;7;bta;bta2;municipal
 bta2_1;1;bta;bta2;commercial
 bta2_1;2;bta;bta2;commercial
 bta2_1;3;bta;bta2;commercial
@@ -955,7 +954,7 @@ bta2_1;8;bta;bta2;commercial
 bta2_1;9;bta;bta2;commercial
 bta2_1;10;bta;bta2;commercial
 bta2_1;11;bta;bta2;commercial
-bta6_4;0;bta;bta6;commercial
+bta2_1;12;bta;bta2;commercial
 bta6_4;1;bta;bta6;commercial
 bta6_4;2;bta;bta6;commercial
 bta6_4;3;bta;bta6;commercial
@@ -967,18 +966,18 @@ bta6_4;8;bta;bta6;commercial
 bta6_4;9;bta;bta6;commercial
 bta6_4;10;bta;bta6;commercial
 bta6_4;11;bta;bta6;commercial
-bta6_c7;0;bta;bta6;municipal
+bta6_4;12;bta;bta6;commercial
 bta6_c7;1;bta;bta6;municipal
 bta6_c7;2;bta;bta6;municipal
 bta6_c7;3;bta;bta6;municipal
 bta6_c7;4;bta;bta6;municipal
-bta6_c7;6;bta;bta6;municipal
+bta6_c7;5;bta;bta6;municipal
 bta6_c7;7;bta;bta6;municipal
 bta6_c7;8;bta;bta6;municipal
 bta6_c7;9;bta;bta6;municipal
 bta6_c7;10;bta;bta6;municipal
 bta6_c7;11;bta;bta6;municipal
-dom3_8;0;dom;dom3;household
+bta6_c7;12;bta;bta6;municipal
 dom3_8;1;dom;dom3;household
 dom3_8;2;dom;dom3;household
 dom3_8;3;dom;dom3;household
@@ -990,7 +989,7 @@ dom3_8;8;dom;dom3;household
 dom3_8;9;dom;dom3;household
 dom3_8;10;dom;dom3;household
 dom3_8;11;dom;dom3;household
-bta4_8;0;bta;bta4;commercial
+dom3_8;12;dom;dom3;household
 bta4_8;1;bta;bta4;commercial
 bta4_8;2;bta;bta4;commercial
 bta4_8;3;bta;bta4;commercial
@@ -1002,7 +1001,7 @@ bta4_8;8;bta;bta4;commercial
 bta4_8;9;bta;bta4;commercial
 bta4_8;10;bta;bta4;commercial
 bta4_8;11;bta;bta4;commercial
-bta4_6;0;bta;bta4;commercial
+bta4_8;12;bta;bta4;commercial
 bta4_6;1;bta;bta4;commercial
 bta4_6;2;bta;bta4;commercial
 bta4_6;3;bta;bta4;commercial
@@ -1014,7 +1013,7 @@ bta4_6;8;bta;bta4;commercial
 bta4_6;9;bta;bta4;commercial
 bta4_6;10;bta;bta4;commercial
 bta4_6;11;bta;bta4;commercial
-bta6l_1;0;bta;bta6;office
+bta4_6;12;bta;bta4;commercial
 bta6l_1;1;bta;bta6;office
 bta6l_1;2;bta;bta6;office
 bta6l_1;3;bta;bta6;office
@@ -1026,13 +1025,13 @@ bta6l_1;8;bta;bta6;office
 bta6l_1;9;bta;bta6;office
 bta6l_1;10;bta;bta6;office
 bta6l_1;11;bta;bta6;office
-bta6_c2;0;bta;bta6;cultural_and_sports
+bta6l_1;12;bta;bta6;office
 bta6_c2;1;bta;bta6;cultural_and_sports
 bta6_c2;2;bta;bta6;cultural_and_sports
 bta6_c2;3;bta;bta6;cultural_and_sports
-bta6_c2;10;bta;bta6;cultural_and_sports
+bta6_c2;4;bta;bta6;cultural_and_sports
 bta6_c2;11;bta;bta6;cultural_and_sports
-bta3_3;0;bta;bta3;commercial
+bta6_c2;12;bta;bta6;cultural_and_sports
 bta3_3;1;bta;bta3;commercial
 bta3_3;2;bta;bta3;commercial
 bta3_3;3;bta;bta3;commercial
@@ -1044,7 +1043,7 @@ bta3_3;8;bta;bta3;commercial
 bta3_3;9;bta;bta3;commercial
 bta3_3;10;bta;bta3;commercial
 bta3_3;11;bta;bta3;commercial
-bta5_7;0;bta;bta5;office
+bta3_3;12;bta;bta3;commercial
 bta5_7;1;bta;bta5;office
 bta5_7;2;bta;bta5;office
 bta5_7;3;bta;bta5;office
@@ -1056,7 +1055,7 @@ bta5_7;8;bta;bta5;office
 bta5_7;9;bta;bta5;office
 bta5_7;10;bta;bta5;office
 bta5_7;11;bta;bta5;office
-dom2_3;0;dom;dom1_2;household
+bta5_7;12;bta;bta5;office
 dom2_3;1;dom;dom1_2;household
 dom2_3;2;dom;dom1_2;household
 dom2_3;3;dom;dom1_2;household
@@ -1068,7 +1067,7 @@ dom2_3;8;dom;dom1_2;household
 dom2_3;9;dom;dom1_2;household
 dom2_3;10;dom;dom1_2;household
 dom2_3;11;dom;dom1_2;household
-bta4_c2;0;bta;bta4;cultural_and_sports
+dom2_3;12;dom;dom1_2;household
 bta4_c2;1;bta;bta4;cultural_and_sports
 bta4_c2;2;bta;bta4;cultural_and_sports
 bta4_c2;3;bta;bta4;cultural_and_sports
@@ -1080,7 +1079,7 @@ bta4_c2;8;bta;bta4;cultural_and_sports
 bta4_c2;9;bta;bta4;cultural_and_sports
 bta4_c2;10;bta;bta4;cultural_and_sports
 bta4_c2;11;bta;bta4;cultural_and_sports
-bta1_c2;0;bta;bta1;municipal
+bta4_c2;12;bta;bta4;cultural_and_sports
 bta1_c2;1;bta;bta1;municipal
 bta1_c2;2;bta;bta1;municipal
 bta1_c2;3;bta;bta1;municipal
@@ -1092,18 +1091,18 @@ bta1_c2;8;bta;bta1;municipal
 bta1_c2;9;bta;bta1;municipal
 bta1_c2;10;bta;bta1;municipal
 bta1_c2;11;bta;bta1;municipal
-bta2_3;0;bta;bta2;office
+bta1_c2;12;bta;bta1;municipal
 bta2_3;1;bta;bta2;office
 bta2_3;2;bta;bta2;office
 bta2_3;3;bta;bta2;office
 bta2_3;4;bta;bta2;office
-bta2_3;6;bta;bta2;office
+bta2_3;5;bta;bta2;office
 bta2_3;7;bta;bta2;office
 bta2_3;8;bta;bta2;office
 bta2_3;9;bta;bta2;office
 bta2_3;10;bta;bta2;office
 bta2_3;11;bta;bta2;office
-bta3_6;0;bta;bta3;commercial
+bta2_3;12;bta;bta2;office
 bta3_6;1;bta;bta3;commercial
 bta3_6;2;bta;bta3;commercial
 bta3_6;3;bta;bta3;commercial
@@ -1115,7 +1114,7 @@ bta3_6;8;bta;bta3;commercial
 bta3_6;9;bta;bta3;commercial
 bta3_6;10;bta;bta3;commercial
 bta3_6;11;bta;bta3;commercial
-bta3_c1;0;bta;bta3;municipal
+bta3_6;12;bta;bta3;commercial
 bta3_c1;1;bta;bta3;municipal
 bta3_c1;2;bta;bta3;municipal
 bta3_c1;3;bta;bta3;municipal
@@ -1127,7 +1126,7 @@ bta3_c1;8;bta;bta3;municipal
 bta3_c1;9;bta;bta3;municipal
 bta3_c1;10;bta;bta3;municipal
 bta3_c1;11;bta;bta3;municipal
-dom4_10;0;dom;dom4;household
+bta3_c1;12;bta;bta3;municipal
 dom4_10;1;dom;dom4;household
 dom4_10;2;dom;dom4;household
 dom4_10;3;dom;dom4;household
@@ -1139,7 +1138,7 @@ dom4_10;8;dom;dom4;household
 dom4_10;9;dom;dom4;household
 dom4_10;10;dom;dom4;household
 dom4_10;11;dom;dom4;household
-bta1_1;0;bta;bta1;office
+dom4_10;12;dom;dom4;household
 bta1_1;1;bta;bta1;office
 bta1_1;2;bta;bta1;office
 bta1_1;3;bta;bta1;office
@@ -1151,7 +1150,7 @@ bta1_1;8;bta;bta1;office
 bta1_1;9;bta;bta1;office
 bta1_1;10;bta;bta1;office
 bta1_1;11;bta;bta1;office
-bta6_c3;0;bta;bta6;cultural_and_sports
+bta1_1;12;bta;bta1;office
 bta6_c3;1;bta;bta6;cultural_and_sports
 bta6_c3;2;bta;bta6;cultural_and_sports
 bta6_c3;3;bta;bta6;cultural_and_sports
@@ -1163,7 +1162,7 @@ bta6_c3;8;bta;bta6;cultural_and_sports
 bta6_c3;9;bta;bta6;cultural_and_sports
 bta6_c3;10;bta;bta6;cultural_and_sports
 bta6_c3;11;bta;bta6;cultural_and_sports
-bta1_8;0;bta;bta1;residential
+bta6_c3;12;bta;bta6;cultural_and_sports
 bta1_8;1;bta;bta1;residential
 bta1_8;2;bta;bta1;residential
 bta1_8;3;bta;bta1;residential
@@ -1175,7 +1174,7 @@ bta1_8;8;bta;bta1;residential
 bta1_8;9;bta;bta1;residential
 bta1_8;10;bta;bta1;residential
 bta1_8;11;bta;bta1;residential
-bta2_c7;0;bta;bta2;cultural_and_sports
+bta1_8;12;bta;bta1;residential
 bta2_c7;1;bta;bta2;cultural_and_sports
 bta2_c7;2;bta;bta2;cultural_and_sports
 bta2_c7;3;bta;bta2;cultural_and_sports
@@ -1187,7 +1186,7 @@ bta2_c7;8;bta;bta2;cultural_and_sports
 bta2_c7;9;bta;bta2;cultural_and_sports
 bta2_c7;10;bta;bta2;cultural_and_sports
 bta2_c7;11;bta;bta2;cultural_and_sports
-dom4_7;0;dom;dom4;household
+bta2_c7;12;bta;bta2;cultural_and_sports
 dom4_7;1;dom;dom4;household
 dom4_7;2;dom;dom4;household
 dom4_7;3;dom;dom4;household
@@ -1199,7 +1198,7 @@ dom4_7;8;dom;dom4;household
 dom4_7;9;dom;dom4;household
 dom4_7;10;dom;dom4;household
 dom4_7;11;dom;dom4;household
-dom2_8;0;dom;dom1_2;household
+dom4_7;12;dom;dom4;household
 dom2_8;1;dom;dom1_2;household
 dom2_8;2;dom;dom1_2;household
 dom2_8;3;dom;dom1_2;household
@@ -1211,7 +1210,7 @@ dom2_8;8;dom;dom1_2;household
 dom2_8;9;dom;dom1_2;household
 dom2_8;10;dom;dom1_2;household
 dom2_8;11;dom;dom1_2;household
-dom2_4;0;dom;dom1_2;household
+dom2_8;12;dom;dom1_2;household
 dom2_4;1;dom;dom1_2;household
 dom2_4;2;dom;dom1_2;household
 dom2_4;3;dom;dom1_2;household
@@ -1223,7 +1222,7 @@ dom2_4;8;dom;dom1_2;household
 dom2_4;9;dom;dom1_2;household
 dom2_4;10;dom;dom1_2;household
 dom2_4;11;dom;dom1_2;household
-bta2_c6;0;bta;bta2;cultural_and_sports
+dom2_4;12;dom;dom1_2;household
 bta2_c6;1;bta;bta2;cultural_and_sports
 bta2_c6;2;bta;bta2;cultural_and_sports
 bta2_c6;3;bta;bta2;cultural_and_sports
@@ -1235,18 +1234,18 @@ bta2_c6;8;bta;bta2;cultural_and_sports
 bta2_c6;9;bta;bta2;cultural_and_sports
 bta2_c6;10;bta;bta2;cultural_and_sports
 bta2_c6;11;bta;bta2;cultural_and_sports
-dom4_8;0;dom;dom4;household
+bta2_c6;12;bta;bta2;cultural_and_sports
 dom4_8;1;dom;dom4;household
 dom4_8;2;dom;dom4;household
 dom4_8;3;dom;dom4;household
 dom4_8;4;dom;dom4;household
 dom4_8;5;dom;dom4;household
 dom4_8;6;dom;dom4;household
-dom4_8;8;dom;dom4;household
+dom4_8;7;dom;dom4;household
 dom4_8;9;dom;dom4;household
 dom4_8;10;dom;dom4;household
 dom4_8;11;dom;dom4;household
-bta5_9;0;bta;bta5;commercial
+dom4_8;12;dom;dom4;household
 bta5_9;1;bta;bta5;commercial
 bta5_9;2;bta;bta5;commercial
 bta5_9;3;bta;bta5;commercial
@@ -1258,7 +1257,7 @@ bta5_9;8;bta;bta5;commercial
 bta5_9;9;bta;bta5;commercial
 bta5_9;10;bta;bta5;commercial
 bta5_9;11;bta;bta5;commercial
-bta2_2;0;bta;bta2;office
+bta5_9;12;bta;bta5;commercial
 bta2_2;1;bta;bta2;office
 bta2_2;2;bta;bta2;office
 bta2_2;3;bta;bta2;office
@@ -1270,7 +1269,7 @@ bta2_2;8;bta;bta2;office
 bta2_2;9;bta;bta2;office
 bta2_2;10;bta;bta2;office
 bta2_2;11;bta;bta2;office
-dom3_5;0;dom;dom3;household
+bta2_2;12;bta;bta2;office
 dom3_5;1;dom;dom3;household
 dom3_5;2;dom;dom3;household
 dom3_5;3;dom;dom3;household
@@ -1282,9 +1281,9 @@ dom3_5;8;dom;dom3;household
 dom3_5;9;dom;dom3;household
 dom3_5;10;dom;dom3;household
 dom3_5;11;dom;dom3;household
-bta1_9;0;bta;bta1;cultural_and_sports
+dom3_5;12;dom;dom3;household
 bta1_9;1;bta;bta1;cultural_and_sports
-bta1_9;3;bta;bta1;cultural_and_sports
+bta1_9;2;bta;bta1;cultural_and_sports
 bta1_9;4;bta;bta1;cultural_and_sports
 bta1_9;5;bta;bta1;cultural_and_sports
 bta1_9;6;bta;bta1;cultural_and_sports
@@ -1293,3 +1292,4 @@ bta1_9;8;bta;bta1;cultural_and_sports
 bta1_9;9;bta;bta1;cultural_and_sports
 bta1_9;10;bta;bta1;cultural_and_sports
 bta1_9;11;bta;bta1;cultural_and_sports
+bta1_9;12;bta;bta1;cultural_and_sports

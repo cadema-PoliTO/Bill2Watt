@@ -19,7 +19,7 @@ Email: gianmarco.lorenti@polito.it
 
 import numpy as np
 from bill2watt.methods.base_predictor import BasePredictor
-from bill2watt.common.common import arera, fs
+from bill2watt.common.common import arera, fs, nj
 
 
 class FlatPredictor(BasePredictor):
@@ -35,16 +35,16 @@ class FlatPredictor(BasePredictor):
 
     Attributes
     ----------
-    x_data : None
-        Not used in this predictor.
-    y_data : None
-        Not used in this predictor.
 
     Methods
     -------
     predict(x, nd)
         Evaluate typical load profiles based on energy consumption values and
         number of days of each day-type.
+
+    See Also
+    --------
+    BasePredictor : Base class for typical load profile predictors.
     """
 
     def __init__(self):
@@ -78,7 +78,16 @@ class FlatPredictor(BasePredictor):
             If any inconsistency is found in the input data.
         """
         # Check consistency of input data
-        x, nd, n_points, mono_dim = self.check_input_data(x, nd)
+        x, n_points, mono_dim = self._validate_input(x)
+
+        # Validate 'nd' given the number of points
+        nd = np.array(nd) if not isinstance(nd, np.ndarray) else nd
+
+        if nd.ndim == 1:
+            nd = nd[np.newaxis, :]
+
+        assert nd.shape == (n_points, nj), \
+            "'nd' must have shape {}.".format((n_points, nj))
 
         # Initialize list of "predicted" typical load profiles
         y_pred = []
@@ -109,15 +118,10 @@ class FlatPredictor(BasePredictor):
         """
         Dummy method that raises an error indicating that fitting is not
          required for this predictor.
-
-        Raises
-        ------
-        NotImplementedError
-            Fitting is not required for the Flat Predictor.
         """
-        raise NotImplementedError("Fitting is not required.")
+        print("Fitting is not required.")
 
-    def add_data_points(self, x_data=None, y_data=None, **kwargs):
+    def add_data(self, x_data=None, y_data=None, **kwargs):
         """
         Add a data point to the predictor. This method is not supported by
         FlatPredictor and will raise an error unless 'x_data' and 'y_data'

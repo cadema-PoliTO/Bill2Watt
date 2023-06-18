@@ -24,13 +24,13 @@ basepath = path.dirname(path.abspath(__file__))
 folder = path.join(basepath, "data")
 
 # Default training dataset
-def_y_data = pd.read_csv(path.join(folder, "y_train.csv"), sep=';',
+def_y_data = pd.read_csv(path.join(folder, "y_train_norm.csv"), sep=';',
                          index_col=[0, 1])
-def_x_data = pd.read_csv(path.join(folder, "x_train.csv"), sep=';',
+def_x_data = pd.read_csv(path.join(folder, "x_train_norm.csv"), sep=';',
                          index_col=[0, 1])
 
 # Default clustering model
-def_clustering = KMeans(n_clusters=11)
+def_clustering = KMeans(n_clusters=11, n_init=100)
 
 # Default classification model
 def_classifier = DecisionTreeClassifier(max_depth=5)
@@ -57,25 +57,23 @@ class ClassificationPredictor(BasePredictor):
 
     Attributes
     ----------
-    x_data : pandas.DataFrame or None
+    x_data (property) : pandas.DataFrame or None
         ToU energy consumption values of the training points.
         If None, default values are used.
-    y_data : pandas.DataFrame or None
+    y_data (property) : pandas.DataFrame or None
         Typical load profiles of the training points.
         If None, default values are used.
-    clustering : object or None
-        Clustering model object with `fit` and `predict` methods.
-        If None, KMeans from sklearn is used.
-    classifier : object or None
-        Classification model object with `fit` and `predict` methods.
-        If None, KNeighborsClassifier from sklearn is used.
 
     Methods
     -------
     predict(x)
         Predict typical load profiles based on the provided inputs.
-    add_data_points(x, y)
+    add_data(x, y)
         Add new data points to the predictor.
+
+    See Also
+    --------
+    BasePredictor : Base class for typical load profile predictors.
     """
 
     def __init__(self, x_data=None, y_data=None, clustering=None, 
@@ -89,7 +87,7 @@ class ClassificationPredictor(BasePredictor):
             "'cluster_centers_ attributes."
         else:
             clustering = def_clustering
-        self.clustering = clustering
+        self._clustering = clustering
 
         if classifier is not None:
             assert hasattr(classifier, 'fit') and \
@@ -97,7 +95,7 @@ class ClassificationPredictor(BasePredictor):
                 "'classifier' must have 'fit' and 'predict' methods."
         else:
             classifier = def_classifier
-        self.classifier = classifier
+        self._classifier = classifier
 
         assert (x_data is None) == (y_data is None), \
             "'x_data' and 'y_data' must both be None or not be None."
@@ -106,7 +104,7 @@ class ClassificationPredictor(BasePredictor):
             x_data = def_x_data
         super().__init__(x_data=x_data, y_data=y_data)
 
-    def predict(self, x, nd=None, scaler=None):
+    def predict(self, x):
         """
         Predict typical load profiles based on the provided inputs.
 
@@ -114,11 +112,6 @@ class ClassificationPredictor(BasePredictor):
         ----------
         x : array-like
             ToU energy consumption values of the point(s) to predict.
-        nd : array-like or None, optional
-            Number of days of each day-type for each point.
-        scaler : callable or None, optional
-            Scaling function to be applied to the predicted load profiles.
-            Default is None, meaning that no scaling is performed.
 
         Returns
         -------
@@ -137,26 +130,13 @@ class ClassificationPredictor(BasePredictor):
             If any inconsistency is found in the input data.
         """
         # Check consistency of input data
-        x, nd, n_points, mono_dim = self.check_input_data(x, nd)
-
-        # If scaling is required, nd cannot be None as needed for scaling
-        if scaler is not None:
-            assert nd is not None, \
-                "'nd' cannot be None, since needed for scaling."
-
-        # Transform 'nd' to list of None for compatibility with zip
-        nd = [None] * n_points if nd is None else nd
+        x, n_points, mono_dim = self._validate_input(x)
 
         # Predict typical load profile
         # Cluster labels
-        labels = self.classifier.predict(x)
+        labels = self._classifier.predict(x)
         # Get cluster centers
-        y_pred = self.clustering.cluster_centers_[labels]
-
-        if scaler is not None:
-            # Scale each predicted profile individually
-            for i in range(n_points):
-                y_pred[i] = scaler(y=y_pred[i], x_des=x[i], nd=nd[i])
+        y_pred = self._clustering.cluster_centers_[labels]
 
         if mono_dim:
             return y_pred[0]
@@ -172,15 +152,18 @@ class ClassificationPredictor(BasePredictor):
 
         """
         # Fit the clustering model
-        self.clustering.fit(self.y_data.values)
+        self._clustering.fit(self.y_data.values)
+        print('cacaz, ', sorted([np.count_nonzero(self._clustering.labels_ == l)
+                                 for l in set(self._clustering.labels_)]))
+        print('cacaz, ', self._clustering.inertia_)
 
         # Assign cluster labels to training data
-        cluster_labels = self.clustering.predict(self.y_data.values)
+        cluster_labels = self._clustering.predict(self.y_data.values)
 
         # Train the classification model with cluster labels as target
-        self.classifier.fit(self.x_data.values, cluster_labels.reshape(-1, 1))
+        self._classifier.fit(self.x_data.values, cluster_labels.reshape(-1, 1))
 
-    def add_data_points(self, x_data, y_data, **kwargs):
+    def add_data(self, x_data, y_data, **kwargs):
         """
         Add new training points to the predictor and re-train the models.
 
@@ -193,7 +176,7 @@ class ClassificationPredictor(BasePredictor):
 
         Additional parameters
         ---------------------
-        Parameters from BasePredictor.add_data_points method.
+        Parameters from 'add_data' method of 'BasePredictor' parent class.
 
         Raises
         ------
@@ -203,7 +186,7 @@ class ClassificationPredictor(BasePredictor):
         """
 
         # Call the base class method to add data points
-        super().add_data_points(x_data, y_data, **kwargs)
+        super().add_data(x_data, y_data, **kwargs)
 
         # Re-train the models using the updated data
         self._fit()
@@ -212,23 +195,20 @@ class ClassificationPredictor(BasePredictor):
 if __name__ == "__main__":
 
     import matplotlib.pyplot as plt
-    from bill2watt.scaling import flat
 
     # Example usage
-    classification_predictor = ClassificationPredictor()
+    predictor = ClassificationPredictor()
 
     # Example usage with one point
-    x = np.array([1, 2, 3])
-    nd = np.array([22, 4, 5])
-    y = classification_predictor.predict(x, nd)
+    x = np.array([100, 20, 300])
+    y = predictor.predict(x)
     print("1 point evaluated, output shape: ", y.shape)
     plt.plot(y)
     plt.show()
 
-    # Example usage with two points and scaling
-    x = np.array([[1, 2, 3], [4, 5, 6]])
-    nd = np.array([[22, 4, 5], [22, 4, 5]])
-    y = classification_predictor.predict(x, nd, scaler=flat.evaluate)
+    # Example usage with two points
+    x = np.array([[100, 20, 300], [500, 40, 50]])
+    y = predictor.predict(x)
     print("2 points evaluated, output shape: ", y.shape)
     plt.plot(y.T)
     plt.show()

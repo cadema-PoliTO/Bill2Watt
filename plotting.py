@@ -26,7 +26,7 @@ from matplotlib.patches import Patch
 from matplotlib.lines import Line2D
 
 # From self-created modules
-from common import *
+from bill2watt.common.common import *
 
 
 # ---------------------------------------------------------------------------

@@ -29,15 +29,15 @@ class BasePredictor:
     y_data : pandas.DataFrame or None, optional
         Typical load profiles of the Standard Load Profiles (SLPs).
 
-    Properties
+    Attributes
     ----------
-    x_data : pd.DataFrame or None
+    x_data (property) : pd.DataFrame or None
         ToU energy consumption values of the data points used to build the
         predictor. None for predictors that do not require data points.
-    y_data : pd.DataFrame or None
+    y_data (property) : pd.DataFrame or None
         Typical load profiles of the data points used to build the predictor.
         None for predictors that do not require data points.
-    n : int
+    n (property) : int
         Number of data points used to build the predictor.
 
     Methods
@@ -87,23 +87,32 @@ class BasePredictor:
         Getter for the n property.
 
         Returns the number of data points (length of x_data or y_data).
-        Raises a ValueError if both x_data and y_data are None.
+        Returns None if both x_data and y_data are None.
 
         Returns
         -------
         int
             Number of data points.
-
-        Raises
-        ------
-        ValueError
-            If both x_data and y_data are None.
         """
         if self.x_data is not None:
             return len(self.x_data)
         if self.y_data is not None:
             return len(self.y_data)
-        raise ValueError("No data points available.")
+        return
+
+    def __bool__(self):
+        """
+        Return True if data points have been added to the model.
+
+        Parameters
+        ----------
+
+        Returns
+        -------
+        bool
+            Whether data points have been added to the model ore not.
+        """
+        return self.n is not None
 
     def add_data(self, x_data=None, y_data=None, update_existing=True):
         """
@@ -143,8 +152,6 @@ class BasePredictor:
                                          update_existing=update_existing)
 
         return self.x_data, self.y_data
-
-
 
     def _validate_data(self, x_data, y_data):
         """
@@ -213,18 +220,6 @@ class BasePredictor:
     def predict(self, x, nd):
         raise NotImplementedError(
             "predict() method must be implemented by child classes.")
-
-    # @staticmethod
-    # def _validate_normalizer(normalizer):
-    #     if normalizer is None:
-    #         return
-    #     assert hasattr(normalizer, 'fit'), "Normalizer must have 'fit' method."
-    #     assert hasattr(normalizer, 'transform'), \
-    #         "Normalizer must have 'transform' method."
-    #     assert hasattr(normalizer, 'inverse_transform'), \
-    #         "Normalizer must have 'inverse_transform' method."
-    #     assert hasattr(normalizer, 'fit_transform'), \
-    #         "Normalizer must have 'fit_transform' method."
 
     @staticmethod
     def _update_data(data, new_data, update_existing=True):

@@ -26,8 +26,8 @@ To use the *bill2watt* package, follow these steps:
 1. Download or clone the repository to your local machine.
 2. Refer to the provided documentation (**soon coming**) to learn how to utilize the *bill2watt* package for predicting load profiles from time-of-use energy bills.
 3. Run the Jupyter Notebook file [eda.ipynb](eda.ipynb) to access the exploratory data analysis (EDA) notebook and explore the dataset used for load profile analysis.
-3. Run the Jupyter Notebook file [tests.ipynb](tests.ipynb) to evaluate the various predictors in the *bill2watt* package and compare their performances based on various metrics.
-4: Additional examples and guides on using the *bill2watt* package will be provided soon.
+4. Run the Jupyter Notebook file [tests.ipynb](tests.ipynb) to evaluate the various predictors in the *bill2watt* package and compare their performances based on various metrics.
+5. Additional examples and guides on using the *bill2watt* package will be provided soon.
 
 Please note that the package documentation will soon be available in the repository. 
 

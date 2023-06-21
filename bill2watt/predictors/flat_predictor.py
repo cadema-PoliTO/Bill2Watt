@@ -18,7 +18,7 @@ Email: gianmarco.lorenti@polito.it
 """
 
 import numpy as np
-from bill2watt.methods.base_predictor import BasePredictor
+from bill2watt.predictors.base_predictor import BasePredictor
 from bill2watt.common.common import arera, fs, nj
 
 

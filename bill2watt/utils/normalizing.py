@@ -47,7 +47,9 @@ class XRowNormalizer:
 
     Attributes
     ----------
-    n : int
+    x_sum (property) : ndarray or None
+        Normalization values in the X data.
+    n (property) : int
         Number of points in the fitting data.
 
     Methods
@@ -67,7 +69,20 @@ class XRowNormalizer:
         self._x_sum = None
 
     def __bool__(self):
-        return self._x_sum is not None
+        return self.x_sum is not None
+
+    @property
+    def x_sum(self):
+        """
+        Get the normalization values of the X data.
+
+        Returns
+        -------
+        ndarray or None
+            Values of self._x_sum
+
+        """
+        return self._x_sum
 
     @property
     def n(self):
@@ -76,16 +91,10 @@ class XRowNormalizer:
 
         Returns
         -------
-        int
+        int or None
             The number of rows in the X data.
-
-        Raises
-        ------
-        AssertionError
-            If the normalizer is not fitted.
         """
-        assert self, "Normalizer is not fitted."
-        return self._x_sum.size
+        return self._x_sum.size if self else None
 
     def fit(self, x):
         """
@@ -199,7 +208,9 @@ class YRowNormalizer(XRowNormalizer):
 
     Attributes
     ----------
-    n : int
+    x_sum (property) : ndarray or None
+        Normalization values in the X data.
+    n (property) : int
         Number of points in the fitting data.
 
     Methods

@@ -16,7 +16,7 @@ import numpy as np
 import pandas as pd
 from os import path
 from sklearn.neighbors import KNeighborsRegressor
-from bill2watt.methods.base_predictor import BasePredictor
+from bill2watt.predictors.base_predictor import BasePredictor
 
 # Path for the folder of common data
 basepath = path.dirname(path.abspath(__file__))
@@ -29,7 +29,7 @@ def_x_data = pd.read_csv(path.join(folder, "x_train_norm.csv"), sep=';',
                          index_col=[0, 1])
 
 # Default regressor
-default_regressor = KNeighborsRegressor(n_neighbors=9)
+def_regressor = KNeighborsRegressor(n_neighbors=9)
 
 
 class RegressionPredictor(BasePredictor):
@@ -72,12 +72,9 @@ class RegressionPredictor(BasePredictor):
 
     def __init__(self, x_data=None, y_data=None, regressor=None,):
 
-        if regressor is not None:
-            assert hasattr(regressor, 'fit') and \
-                   hasattr(regressor, 'predict'), \
-                "'regressor' must have 'fit' and 'predict' methods."
-        else:
-            regressor = default_regressor
+        regressor = def_regressor if regressor is None else regressor
+        assert hasattr(regressor, 'fit') and hasattr(regressor, 'predict'),\
+            "'regressor' must have 'fit' and 'predict' methods."
         self._regressor = regressor
 
         assert (x_data is None) == (y_data is None), \

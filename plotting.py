@@ -1,38 +1,27 @@
 """
-This module contains all the functions needed to make the plots for the 
-project 'DatadrivenLoadProfile'.
 
-Description:
-None
 
-Notes:
-The details of the project can be found at THIS-LINK.
+Notes
+-----
 
-Info:
-- Author: G. Lorenti (gianmarco.lorenti@polito.it)
-- Date: 21.05.2023
+Info
+----
+Author: G. Lorenti
+Email: gianmarco.lorenti@polito.it
 """
 
-
-# ----------------------------------------------------------------------------
-# Import
-
-# From Python libraries, packages, modules
 import math
+
+import matplotlib
 from matplotlib import pyplot as plt
 from matplotlib import cm
 from matplotlib import patheffects as pe
 from matplotlib.patches import Patch
 from matplotlib.lines import Line2D
-
-# From self-created modules
 from bill2watt.common.common import *
 
 
-# ---------------------------------------------------------------------------
-# Default settings
-def_figsize = (3.5, 2)
-def_fontsize = 10
+# Default colors and colormaps
 color_map = {
     'tab:blue': 'Blues',
     'tab:red': 'Reds',
@@ -44,13 +33,30 @@ def_colors = list(color_map.keys())
 def_cmaps = list(color_map.values())
 
 
-# ----------------------------------------------------------------------------
 # Auxiliary functions
 
-# Function to optimize the grid layout
+
 def calculate_grid_layout(n, figsize):
-    """Calculate the optimal number of rows and columns for a gridspec
-    layout given the number of subplots and figure size."""
+    """
+    Calculate the optimal number of rows and columns for a gridspec layout
+    given the number of subplots and figure size.
+
+    Parameters
+    ----------
+    n : int
+        Number of subplots.
+    figsize : tuple
+        Figure size in inches (width, height).
+
+    Returns
+    -------
+    int
+        Number of rows in the layout.
+    int
+        Number of columns in the layout.
+    tuple
+        Adjusted figure size to accommodate the subplots.
+    """
 
     # Calculate the optimal number of rows and columns
     nrows = math.isqrt(n)
@@ -61,76 +67,85 @@ def calculate_grid_layout(n, figsize):
     width *= ncols
     height *= nrows
 
-    # Return
     return nrows, ncols, (width, height)
 
 
-# ----------------------------------------------------------------------------
-# Function to create two concentric doughnut charts
-# The two charts show the dataset distribution according to two different
-# columns which are two-levels separation of the dataset.
-def create_two_doughnuts(data: pd.DataFrame,
-                         col_in: str,
-                         col_out: str,
-                         colors_in: list = None,
-                         cmaps_out: list = None,
-                         **kwargs: dict) -> plt.Figure:
+def get_rc_params(**kwargs):
     """
-    Create two concentric doughnut charts.
+    Get the Matplotlib RC parameters from the provided keyword arguments.
 
-    Description:
-    The two charts show the dataset distribution according to two different
-    columns which are two-levels separation of the dataset.
+    Parameters
+    ----------
+    **kwargs : dict
+        Keyword arguments that can be used to update matplotlib.rc_params.
 
-    Notes:
-    None
+    Returns
+    -------
+    dict
+        Matplotlib RC parameters.
+    """
+    rc_params = {key: param for key, param in kwargs.items() if
+                 key in matplotlib.rcParams}
+    return rc_params
 
-    Parameters:
-    - data (pandas DataFrame): Input data.
-        The data shall contain the necessary columns.
-    - col_in (str): Column name for the inner doughnut.
-    - col_out (str): Column name for the outer doughnut.
-    - colors_in (list): List of color names for the inner doughnut.
-        If not provided, default colors are used. Optional, default is None.
-    - cmaps_out (list): List of colormap names for the outer doughnut.
-        If not provided, default colormaps are used. Optional, default is None.
-    - **kwargs (dict): Additional keyword arguments for customization.
 
-    Additional parameters:
-    - size (float): Size of the inner doughnut.
-        The size is relative to the outer doughnut. Default: 0.4.
-    - alpha (float): Transparency of the doughnut charts.
-        Default is 0.8.
-    - radius (float): Radius of the doughnut charts.
-        Default is 1.1.
-    - figsize (tuple): Figure size.
-        Default is (3.5, 2.5).
-    - fontsize (int): Font size.
-        Default is 10.
-    - grid_spec (dict): GridSpec options for the figure.
-        Default is dict(width_ratios=(1, 0.33)).
-    - title (str): Title of the plot.
-        If not provided, no title is generated. Optional, default is None.
-    - title_pos (tuple): Position of the title.
-        Value is relative to the figure. Default is (0.5, 0.95).
+# Plotting facilities
 
-    Returns:
-    - fig (matplotlib Figure): The generated figure.
 
-    Info:
-    - Author: G. Lorenti (gianmarco.lorenti@polito.it)
-    - Date: 21.05.2023
+def create_two_doughnuts(data, col_in, col_out, colors_in=None, cmaps_out=None,
+                         **kwargs):
+    """
+    Create two concentric doughnut charts, showing a dataset distribution
+    according to two different columns which are two-levels separation of the
+    dataset.
+
+    Parameters
+    ----------
+    data : pandas.DataFrame
+        Input data.
+    col_in : str
+        Column name for the inner doughnut.
+    col_out : str
+        Column name for the outer doughnut.
+    colors_in : list, optional
+        List of color names for the inner doughnut, by default None.
+    cmaps_out : list, optional
+        List of colormap names for the outer doughnut, by default None.
+    **kwargs : dict
+        Additional keyword arguments for customization.
+
+    Additional parameters
+    ---------------------
+    size : float, optional
+        Size of the inner doughnut, relative to the outer doughnut.
+    alpha : float, optional
+        Transparency of the doughnut charts.
+    radius : float, optional
+        Radius of the doughnut charts.
+    grid_spec : dict, optional
+        GridSpec options for the figure.
+    title : str, optional
+        Title of the plot.
+    title_pos : tuple, optional
+        Position of the title.
+
+    Returns
+    -------
+    plt.Figure
+        The generated figure.
     """
 
-    # Extract additional parameters from kwargs or use default values
-    figsize = kwargs.get('figsize', def_figsize)
-    fontsize = kwargs.get('fontsize', def_fontsize)
+    # Get keyword arguments or use default values
     size = kwargs.get('size', 0.4)
     alpha = kwargs.get('alpha', 0.8)
     radius = kwargs.get('radius', 1.1)
     gridspec = kwargs.get('gridspec', dict(width_ratios=(1, 0.33)))
     title = kwargs.get('title', None)
     title_pos = kwargs.get('title_pos', (0.5, 0.95))
+
+    # Eventually update rc_params from 'kwargs'
+    plt.rcParams.update(get_rc_params(**kwargs))
+
     # Check if the specified columns are in the data DataFrame
     assert col_in in data.columns,\
         f"Column '{col_in}' not found in the data DataFrame."
@@ -165,8 +180,7 @@ def create_two_doughnuts(data: pd.DataFrame,
             counts_out[j].append(1)
 
     # Create figure
-    fig, (ax, ax_leg) = plt.subplots(nrows=1, ncols=2, figsize=figsize,
-                                     gridspec_kw=gridspec)
+    fig, (ax, ax_leg) = plt.subplots(nrows=1, ncols=2, gridspec_kw=gridspec)
 
     # Extract colors for inner doughnut
     if colors_in is None:
@@ -194,93 +208,74 @@ def create_two_doughnuts(data: pd.DataFrame,
     ax.pie(counts_in, radius=radius - size, colors=colors_in,
            wedgeprops=dict(alpha=alpha, width=size, edgecolor='w'))
     ax.pie(counts_out, labels=labels_out, radius=radius, colors=colors_out,
-           textprops=dict(fontsize=fontsize),
            wedgeprops=dict(alpha=alpha, width=size, edgecolor='w'))
 
     # Add legend in the dedicate axis
     ax_leg.axis('off')
     leg_elements = [Patch(label=l_in, color=c_in, alpha=alpha)
                     for l_in, c_in in zip(labels_in, colors_in)]
-    ax_leg.legend(handles=leg_elements, fontsize=fontsize, loc='center')
+    ax_leg.legend(handles=leg_elements, loc='center')
 
     # Add a title
-    fig.text(*title_pos, title, fontsize=fontsize, ha='center', va='center')
+    fig.text(*title_pos, title, ha='center', va='center')
 
-    # Return
     return fig
 
 
-# ----------------------------------------------------------------------------
-# Function to create aligned boxplot
-# Show the distribution of the data according to a certain grouping
-# and for different variables
-def create_aligned_boxplots(data: pd.DataFrame,
-                            groupby: str or list,
-                            cols: str or list,
-                            **kwargs: dict) -> plt.Figure:
+def create_aligned_boxplots(data, groupby, cols, **kwargs):
     """
-    Create aligned boxplots.
+    Create aligned boxplots showing the distribution of the data according to
+    a certain grouping and for different variables.
 
-    Description:
-    The aligned boxplots show the distribution of the data according to a
-    certain grouping and for different variables.
+    Parameters
+    ----------
+    data : pd.DataFrame
+        Input data.
+    groupby : str or list
+        Column name(s) for grouping.
+    cols : str or list
+        Column name(s) for variables.
 
-    Notes:
-    None
+    Additional parameters
+    ---------------------
+    colors : list, optional
+        List of colors for the boxplots.
+    dx : int, optional
+        Spacing between boxplots.
+    horizontal : bool, optional
+        Orientation of the boxplots.
+    gridspec : dict, optional
+        GridSpec options for the figure.
+    whis : tuple, optional
+        Percentiles for whiskers calculation.
+    alpha : float, optional
+        Transparency of the boxes.
+    medianprops : dict, optional
+        Properties for the median line.
+    boxprops : dict, optional
+        Properties for the box.
+    showfliers : bool, optional
+        Whether to show the outliers.
+    title : str, optional
+        Title of the plot.
+    title_pos : tuple, optional
+        Position of the title.
+    xlabel : str, optional
+        X-axis label.
+    ylabel : str, optional
+        Y-axis label.
+    legend_labels : list, optional
+        Custom labels for the legend.
 
-    Parameters:
-    - data (pandas DataFrame): Input data.
-        The data shall contain the necessary columns.
-    - groupby (str or list): Column name(s) to group the data by.
-    - cols (str or list): List of column names to create boxplots for.
-    - title (str, optional): Title of the plot.
-        Optional, default is None.
-    - ylabel (str, optional): Label for the y-axis.
-        Optional, default is None.
-    - legend_labels (list, optional): List of labels for the legend.
-        Optional, default is None.
-    - **kwargs (dict): Additional keyword arguments for plot customization.
-
-    Additional Parameters:
-    - colors (list): List of colors for the boxplots.
-        If not provided, default colors are used.
-    - dx (float): Offset between boxplots along the x-axis. Default is 1.
-    - whis (tuple): Percentiles to use for whiskers of the boxplots.
-        Default is (5, 95).
-    - figsize (tuple): Figure size. If not provided, default values are used.
-    - fontsize (int): Font size. If not provided, default value is used.
-    - horizontal (bool): Whether to create horizontal boxplots.
-        Default is False.
-    - gridspec (dict): Gridspec parameters for subplots.
-        Default is dict(width_ratios=(1, 0.1)).
-    - medianprops (dict): Properties for the medians.
-        Default is dict(linewidth=3).
-    - boxprops (dict): Properties for the boxes. Default is dict(alpha=0.5).
-    - showfliers (bool): Whether to show outliers. Default is False.
-    - title (str): Title of the figure. Default is None.
-    - title_pos (tuple): Position of the title. Default is (0.5, 0.95).
-    - xlabel (str): X-axis label.
-        Only used if 'horizontal' is True. Default is None.
-    - ylabel (str): Y-axis label.
-        Only used if 'horizontal' is False. Default is None.
-    - legend_labels (list): List of labels to use in the legend.
-        They are related to the variables in the boxplot. If not provided,
-        column names are used. Default is None.
-
-
-    Returns:
-    - fig (matplotlib Figure): The generated figure.
-
-    Info:
-    - Author: G. Lorenti (gianmarco.lorenti@polito.it)
-    - Date: 21.05.2023
+    Returns
+    -------
+    plt.Figure
+        The generated figure.
     """
 
-    # Extract additional parameters from kwargs or use default values
+    # Get keyword arguments or use default values
     colors = kwargs.get('colors', def_colors)
     dx = kwargs.get('dx', 1)
-    figsize = kwargs.get('figsize', def_figsize)
-    fontsize = kwargs.get('fontsize', def_fontsize)
     horizontal = kwargs.get('horizontal', False)
     gridspec = kwargs.get('gridspec', dict(width_ratios=(1, 0.1)))
     whis = kwargs.get('whis', (5, 95))
@@ -293,6 +288,9 @@ def create_aligned_boxplots(data: pd.DataFrame,
     xlabel = kwargs.get('xlabel', None)
     ylabel = kwargs.get('ylabel', None)
     legend_labels = kwargs.get('legend_labels', None)
+
+    # Eventually update rc_params from 'kwargs'
+    plt.rcParams.update(get_rc_params(**kwargs))
 
     # Check if 'cols' and 'groupby' are in the data DataFrame
     cols = [cols] if isinstance(cols, str) else cols
@@ -314,8 +312,7 @@ def create_aligned_boxplots(data: pd.DataFrame,
     positions = np.arange(1, len(names) + 1) * dx * (len(cols) + 1)
 
     # Create subplots
-    fig, (ax, ax_leg) = plt.subplots(nrows=1, ncols=2, figsize=figsize,
-                                     gridspec_kw=gridspec)
+    fig, (ax, ax_leg) = plt.subplots(nrows=1, ncols=2, gridspec_kw=gridspec)
     # Create boxplots
     for idx, col_values in enumerate(values):
         medianprops = {**medianprops, **dict(color=colors[idx])}
@@ -327,14 +324,13 @@ def create_aligned_boxplots(data: pd.DataFrame,
 
     # Add labels and ticks on the axes
     if horizontal:
-        ax.set_yticks(positions, names, fontsize=fontsize)
-        ax.set_xlabel(xlabel, fontsize=fontsize)
+        ax.set_yticks(positions, names)
+        ax.set_xlabel(xlabel)
         ax.grid(axis='x')
     else:
-        ax.set_xticks(positions, names, fontsize=fontsize)
-        ax.set_ylabel(ylabel, fontsize=fontsize)
+        ax.set_xticks(positions, names)
+        ax.set_ylabel(ylabel)
         ax.grid(axis='y')
-    ax.tick_params(labelsize=fontsize)
 
     # Add legend in the dedicated axis
     ax_leg.axis('off')
@@ -342,77 +338,82 @@ def create_aligned_boxplots(data: pd.DataFrame,
         [Patch(label=label, alpha=alpha, color=color)
          for label, color
          in zip(cols if legend_labels is None else legend_labels, colors)]
-    ax_leg.legend(handles=leg_elements, fontsize=fontsize, loc='center')
+    ax_leg.legend(handles=leg_elements, loc='center')
 
     # Add a title
-    fig.text(*title_pos, title, fontsize=fontsize, ha='center', va='center')
+    fig.text(*title_pos, title, ha='center', va='center')
 
-    # Return
     return fig
 
 
-# ----------------------------------------------------------------------------
-def create_profile_percentiles(data: pd.DataFrame,
-                               cols: list,
-                               **kwargs):
+def create_profile_percentiles(data, cols, **kwargs):
     """
-    Create profile of percentiles plot.
+    Create profile of percentiles plot, which are extracted from the data
+    using the provided columns. The data provided are treated as samples,
+    hence the percentiles are evaluated row-wise, for each column.
 
-    Description:
-    The 'profiles' are extracted from the data using the provided columns.
-    The data provided are treated as samples, hence the percentiles are
-    evaluated row-wise, for each column.
+    Parameters
+    ----------
+    data : DataFrame
+        Input data containing the profile samples.
+    cols : list
+        List of column names in the data to use for percentile evaluation.
 
-    Parameters:
-    - data (pandas DataFrame): The input data.
-    - cols (list): List of column names to plot.
-    - **kwargs (dict): Additional keyword arguments for customization.
+    Additional parameters
+    ---------------------
+    q_min : float, optional
+        The minimum quantile value to plot.
+    q_1 : float, optional
+        The 25th percentile value to plot.
+    q_med : float, optional
+        The median (50th percentile) value to plot.
+    q_3 : float, optional
+        The 75th percentile value to plot.
+    q_max : float, optional
+        The maximum quantile value to plot.
+    specs_min : dict, optional
+        Specifications for the line plot of the minimum quantile.
+    specs_max : dict, optional
+        Specifications for the line plot of the maximum quantile
+        (default: {'color': 'tab:red', 'lw': 1.5, 'ls': '--'}).
+    specs_med : dict, optional
+        Specifications for the line plot of the median.
+    specs_iqr : dict, optional
+        Specifications for the fill between the 25th and 75th percentiles.
+    title : str, optional
+        Title of the plot.
+    title_pos : tuple, optional
+        Position of the title in the figure.
+    xlabel : str, optional
+        Label for the x-axis.
+    ylabel : str, optional
+        Label for the y-axis.
+    xticks : dict, optional
+        Specifications for customizing x-axis ticks.
+    yticks : dict, optional
+        Specifications for customizing y-axis ticks.
+    grid : dict, optional
+        Specifications for grid display.
+    gridspec : dict, optional
+        Specifications for the gridspec layout.
 
-    Additional parameters:
-    - q_min (float): Minimum quantile. Default is 0.05.
-    - q_1 (float): First quartile. Default is 0.25.
-    - q_med (float): Median quantile. Default is 0.5.
-    - q_3 (float): Third quartile. Default is 0.75.
-    - q_max (float): Maximum quantile. Default is 0.95.
-    - figsize (tuple): Figure size. If not provided, default values are used.
-    - fontsize (int): Font size. If not provided, default value is used.
-    - gridspec (dict): Grid specifications.
-        Default is dict(width_ratios=(1, 0.1)).
-    - specs_min (dict): Specifications for minimum quantile line.
-        Default is dict(color='tab:red', lw=1.5, ls='--').
-    - specs_max (dict): Specifications for maximum quantile line.
-        Default is dict(color='tab:red', lw=1.5, ls='-.').
-    -specs_med (dict): Specifications for median quantile line.
-        Default is dict(color='tab:blue', lw=1.5, patheffects=[...]).
-    - specs_iqr (dict): Specifications for IQR (interquartile range) fill.
-        Default is dict(color='gold', alpha=0.8).
-    - title (str): Title of the figure. Default is None.
-    - title_pos (tuple): Position of the title. Default is (0.5, 0.95).
-    - xlabel (str): X-axis label. Default is None.
-    - ylabel (str): Y-axis label. Default is None.
-    - xticks (dict): X-axis tick parameters. Default is None.
-    - yticks (dict): Y-axis tick parameters. Default is None.
-    - grid (dict): Grid parameters. Default is None.
-
-    Returns:
-        fig (Figure): The generated matplotlib Figure object.
+    Returns
+    -------
+    plt.Figure
+        The generated figure.
     """
-    # Extract additional parameters from kwargs or use default values
+
+    # Get keyword arguments or use default values
     q_min = kwargs.get('q_min', 0.05)
     q_1 = kwargs.get('q_1', 0.25)
     q_med = kwargs.get('q_med', 0.5)
     q_3 = kwargs.get('q_3', 0.75)
     q_max = kwargs.get('q_max', 0.95)
-    figsize = kwargs.get('figsize', (6, 4))
-    fontsize = kwargs.get('fontsize', 10)
-    gridspec = kwargs.get('gridspec', dict(width_ratios=(1, 0.1)))
     specs_min = kwargs.get('specs_min', dict(color='tab:red', lw=1.5, ls='--'))
     specs_max = kwargs.get('specs_max', dict(color='tab:red', lw=1.5, ls='--'))
-    specs_med = \
-        kwargs.get('specs_med',
-                   dict(color='tab:blue', lw=1.5,
-                        path_effects=[pe.Stroke(foreground='w', linewidth=3),
-                                      pe.Normal()]))
+    specs_med = kwargs.get('specs_med', dict(
+        color='tab:blue', lw=1.5, path_effects=[
+            pe.Stroke(foreground='w', linewidth=3), pe.Normal()]))
     specs_iqr = kwargs.get('specs_iqr', dict(color='gold', alpha=0.8))
     title = kwargs.get('title', None)
     title_pos = kwargs.get('title_pos', (0.5, 0.95))
@@ -421,6 +422,10 @@ def create_profile_percentiles(data: pd.DataFrame,
     xticks= kwargs.get('xticks', None)
     yticks = kwargs.get('yticks', None)
     grid = kwargs.get('grid', None)
+    gridspec = kwargs.get('gridspec', dict(width_ratios=(1, 0.1)))
+
+    # Eventually update rc_params from 'kwargs'
+    plt.rcParams.update(get_rc_params(**kwargs))
 
     # Values of the power and of the different quantiles
     powers = data[cols].values
@@ -428,8 +433,7 @@ def create_profile_percentiles(data: pd.DataFrame,
         np.quantile(powers, [q_min, q_1, q_med, q_3, q_max], axis=0)
 
     # Create subplots
-    fig, (ax, ax_leg) = plt.subplots(1, 2, figsize=figsize,
-                                     gridspec_kw=gridspec)
+    fig, (ax, ax_leg) = plt.subplots(1, 2, gridspec_kw=gridspec)
 
     # Plot quantiles
     t = np.arange(len(cols))
@@ -439,15 +443,14 @@ def create_profile_percentiles(data: pd.DataFrame,
     ax.plot(t, q_meds, **specs_med)
 
     # Add labels
-    ax.set_xlabel(xlabel, fontsize=fontsize)
-    ax.set_ylabel(ylabel, fontsize=fontsize)
+    ax.set_xlabel(xlabel)
+    ax.set_ylabel(ylabel)
     if xticks is not None:
         ax.set_xticks(**xticks)
     if yticks is not None:
         ax.set_yticks(**yticks)
     if grid is not None:
         ax.grid(**grid)
-    ax.tick_params(labelsize=fontsize)
 
     # Add legend in dedicated axis
     ax_leg.axis('off')
@@ -456,11 +459,186 @@ def create_profile_percentiles(data: pd.DataFrame,
          in zip(('Min', 'Med', 'Max'),
                 (specs_min, specs_med, specs_max))]
     leg_elements.append(Patch(label='IQR', **specs_iqr))
-    ax_leg.legend(handles=leg_elements, fontsize=fontsize, loc='center')
+    ax_leg.legend(handles=leg_elements, loc='center')
 
     # Add title
-    fig.text(*title_pos, title, fontsize=fontsize, ha='center', va='center')
+    fig.text(*title_pos, title, ha='center', va='center')
 
-    # Return
     return fig
 
+
+def create_radar_plot(data, labels=None, xticklabels=None, **kwargs):
+    """
+     Create a radar plot based on the provided data.
+
+     Parameters
+     ----------
+     data : pd.DataFrame
+         DataFrame containing the radar plot values.
+     labels : list, optional
+         List of labels for each row in the data.
+     xticklabels : list, optional
+         List of labels for the radar plot x-axis.
+     **kwargs : dict
+         Additional keyword arguments for customizing the plot.
+
+     Additional parameters
+     ---------------------
+     linewidth : float, optional
+         The linewidth of the radar plot lines.
+     xlim : list, optional
+         The limits for the x-axis.
+     gridspec_kw : dict, optional
+         Specifications for the gridspec layout.
+     title : str, optional
+         Title of the radar plot.
+
+     Returns
+     -------
+     matplotlib.figure.Figure
+         The generated radar plot figure.
+     """
+
+    # Get keyword arguments or use default values
+    linewidth = kwargs.get('linewidth', 1)
+    xlim = kwargs.get('xlim', [None, None])
+    gridspec_kw = kwargs.get('gridspec_kw', dict(width_ratios=[0.5, 0.5]))
+    title = kwargs.get('title', '')
+
+    # Eventually update rc_params from 'kwargs'
+    plt.rcParams.update(get_rc_params(**kwargs))
+
+    # Get the columns of the dataframe (radars)
+    columns = data.columns.tolist()
+
+    # Get labels (of legend) from data if not provided
+    if labels is None:
+        labels = list(data.index)
+
+    # Get xticklabels from data if not provided
+    if xticklabels is None:
+        xticklabels = columns
+
+    # Generate evenly spaced angles for the radar plot
+    angles = np.linspace(0, 2 * np.pi, len(columns), endpoint=False).tolist()
+    angles += angles[:1]  # Close the plot
+
+    # Create subplots
+    fig, (ax, ax_leg) = plt.subplots(nrows=1, ncols=2,
+                                     subplot_kw={'polar': True},
+                                     gridspec_kw=gridspec_kw)
+
+    # Plot the radar lines for each test
+    for i, (_, row) in enumerate(data.iterrows()):
+        values = row.values
+        values = np.append(values, values[0])  # Close the plot
+
+        # Plot the radar lines
+        ax.plot(angles, values, linewidth=linewidth, label=labels[i])
+
+    # Set the X axis labels, ticks and lims
+    ax.set_xticks(angles[:-1])
+    ax.set_xticklabels(xticklabels)
+    ax.set_xlim(xlim)
+
+    # Set the radar plot title
+    ax.set_title(title)
+
+    # Add a legend plot
+    legend_elements = ax.get_legend_handles_labels()
+    ax_leg.axis('off')
+    ax_leg.legend(*legend_elements)
+
+    # Adjust the figure layout
+    fig.tight_layout()
+
+    return fig
+
+
+def create_row_boxplots(data, xticklabels=None, **kwargs):
+    """
+    Create row-based boxplots using the provided data.
+
+    Parameters
+    ----------
+    data : pd.DataFrame
+        DataFrame containing the boxplot values.
+
+    xticklabels : list, optional
+        List of labels for the x-axis tick marks.
+
+    **kwargs : dict
+        Additional keyword arguments for customizing the plot.
+
+    Additional parameters
+    ---------------------
+    whis : float or sequence, optional
+        The whisker positions in units of data width.
+    showfliers : bool, optional
+        Whether to show the outliers.
+    showmeans : bool, optional
+        Whether to show the means.
+    boxprops : dict, optional
+        Properties for customizing the box appearance.
+    medianprops : dict, optional
+        Properties for customizing the median line appearance.
+    meanprops : dict, optional
+        Properties for customizing the mean line appearance.
+    title : str, optional
+        Title of the plot.
+    ylabel : str, optional
+        Label for the y-axis.
+
+    Returns
+    -------
+    matplotlib.figure.Figure
+        The generated boxplot figure.
+    """
+
+    # Get keyword arguments or use default values
+    whis = kwargs.get('whis', (0.05, 0.95))
+    showfliers = kwargs.get('showfliers', False)
+    showmeans = kwargs.get('showmeans', False)
+    boxprops = kwargs.get('boxprops', dict(facecolor='tab:blue'))
+    whiskerprops= kwargs.get('whiskerprops', dict())
+    medianprops = kwargs.get('medianprops', dict(color='tab:orange'))
+    meanprops = kwargs.get('meanprops', dict(color='tab:green'))
+    title = kwargs.get('title', '')
+    ylabel = kwargs.get('ylabel', '')
+
+    # Eventually update rc_params from 'kwargs'
+    plt.rcParams.update(get_rc_params(**kwargs))
+
+    # Get xticklabels from data if not provided
+    if xticklabels is None:
+        xticklabels = list(data.index)
+
+    # Set the positions for the boxes
+    positions = range(len(data))
+
+    # Get the values for each position
+    values = list(data.values)
+
+    # Create subplots
+    fig, ax = plt.subplots()
+
+    # Plot the boxplots
+    ax.boxplot(values, positions=positions, whis=whis,
+               showfliers=showfliers, showmeans=showmeans, patch_artist=True,
+               boxprops=boxprops,whiskerprops=whiskerprops,
+               medianprops=medianprops, meanprops=meanprops)
+
+    # Set the x-axis ticks and xticklabels
+    ax.set_xticks(positions)
+    ax.set_xticklabels(xticklabels)
+
+    # Set the y label
+    ax.set_ylabel(ylabel)
+
+    # Set the plot title
+    ax.set_title(title)
+
+    # Adjust the figure layout
+    fig.tight_layout()
+
+    return fig

@@ -15,7 +15,7 @@ Email: gianmarco.lorenti@polito.it
 import numpy as np
 import pandas as pd
 from os import path
-from bill2watt.methods.base_predictor import BasePredictor
+from bill2watt.predictors.base_predictor import BasePredictor
 
 # Default SLPs
 

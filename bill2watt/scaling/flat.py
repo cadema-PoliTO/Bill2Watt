@@ -14,7 +14,8 @@ Email: gianmarco.lorenti@polito.it
 
 import numpy as np
 # from bill2watt.common.common import *
-from bill2watt.utils import eval_x, check_y, check_x, check_nd
+from bill2watt.utils.utils import eval_x
+from bill2watt.utils.check_sizes import check_y, check_x, check_nd
 
 
 def evaluate(y, x_des, nd=None, x=None):
@@ -67,7 +68,7 @@ def evaluate(y, x_des, nd=None, x=None):
 
     # Evaluate ToU-monthly consumption associated with y, if needed
     if x is None:
-        x = eval_x.evaluate(y, nd)
+        x = eval_x(y, nd)
     # Calculate scaling factor
     k_scale = x_des.sum() / x.sum()
     # Evaluate scaled load profiles

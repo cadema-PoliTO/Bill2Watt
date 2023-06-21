@@ -17,7 +17,7 @@ import pandas as pd
 from os import path
 from sklearn.cluster import KMeans
 from sklearn.tree import DecisionTreeClassifier
-from bill2watt.methods.base_predictor import BasePredictor
+from bill2watt.predictors.base_predictor import BasePredictor
 
 # Path for the folder of common data
 basepath = path.dirname(path.abspath(__file__))
@@ -79,22 +79,14 @@ class ClassificationPredictor(BasePredictor):
     def __init__(self, x_data=None, y_data=None, clustering=None, 
                  classifier=None):
 
-        if clustering is not None:
-            assert hasattr(clustering, 'fit') and \
-                   hasattr(clustering, 'labels_') and \
-                   hasattr(clustering, 'cluster_centers_'), \
-            "'clustering' must have 'fit' method and 'labels_' and " \
-            "'cluster_centers_ attributes."
-        else:
-            clustering = def_clustering
+        clustering = def_clustering if clustering is None else clustering
+        assert hasattr(clustering, 'fit'), \
+            "'clustering' must have 'fit' method."
         self._clustering = clustering
 
-        if classifier is not None:
-            assert hasattr(classifier, 'fit') and \
-                   hasattr(classifier, 'predict'), \
-                "'classifier' must have 'fit' and 'predict' methods."
-        else:
-            classifier = def_classifier
+        classifier = def_classifier if classifier is None else classifier
+        assert hasattr(classifier, 'fit') and hasattr(classifier, 'predict'), \
+            "'classifier' must have 'fit' and 'predict' methods."
         self._classifier = classifier
 
         assert (x_data is None) == (y_data is None), \
@@ -153,9 +145,11 @@ class ClassificationPredictor(BasePredictor):
         """
         # Fit the clustering model
         self._clustering.fit(self.y_data.values)
-        print('cacaz, ', sorted([np.count_nonzero(self._clustering.labels_ == l)
-                                 for l in set(self._clustering.labels_)]))
-        print('cacaz, ', self._clustering.inertia_)
+
+        assert hasattr(self._clustering, 'labels_') and \
+               hasattr(self._clustering, 'cluster_centers_'),\
+            "After fitting, self._clustering must have 'labels_ and " \
+            "'cluster_centers_ attributes"
 
         # Assign cluster labels to training data
         cluster_labels = self._clustering.predict(self.y_data.values)
@@ -196,19 +190,19 @@ if __name__ == "__main__":
 
     import matplotlib.pyplot as plt
 
-    # Example usage
-    predictor = ClassificationPredictor()
-
-    # Example usage with one point
-    x = np.array([100, 20, 300])
-    y = predictor.predict(x)
-    print("1 point evaluated, output shape: ", y.shape)
-    plt.plot(y)
-    plt.show()
-
-    # Example usage with two points
-    x = np.array([[100, 20, 300], [500, 40, 50]])
-    y = predictor.predict(x)
-    print("2 points evaluated, output shape: ", y.shape)
-    plt.plot(y.T)
-    plt.show()
+    # # Example usage
+    # predictor = ClassificationPredictor()
+    #
+    # # Example usage with one point
+    # x = np.array([100, 20, 300])
+    # y = predictor.predict(x)
+    # print("1 point evaluated, output shape: ", y.shape)
+    # plt.plot(y)
+    # plt.show()
+    #
+    # # Example usage with two points
+    # x = np.array([[100, 20, 300], [500, 40, 50]])
+    # y = predictor.predict(x)
+    # print("2 points evaluated, output shape: ", y.shape)
+    # plt.plot(y.T)
+    # plt.show()

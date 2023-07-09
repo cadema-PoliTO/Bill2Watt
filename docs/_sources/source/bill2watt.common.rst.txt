@@ -1,0 +1,21 @@
+bill2watt.common package
+========================
+
+Submodules
+----------
+
+bill2watt.common.common module
+------------------------------
+
+.. automodule:: bill2watt.common.common
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: bill2watt.common
+   :members:
+   :undoc-members:
+   :show-inheritance:

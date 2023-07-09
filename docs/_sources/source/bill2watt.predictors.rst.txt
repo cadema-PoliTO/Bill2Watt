@@ -1,0 +1,61 @@
+bill2watt.predictors package
+============================
+
+Submodules
+----------
+
+bill2watt.predictors.base\_predictor module
+-------------------------------------------
+
+.. automodule:: bill2watt.predictors.base_predictor
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+bill2watt.predictors.category\_predictor module
+-----------------------------------------------
+
+.. automodule:: bill2watt.predictors.category_predictor
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+bill2watt.predictors.classification\_predictor module
+-----------------------------------------------------
+
+.. automodule:: bill2watt.predictors.classification_predictor
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+bill2watt.predictors.flat\_predictor module
+-------------------------------------------
+
+.. automodule:: bill2watt.predictors.flat_predictor
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+bill2watt.predictors.regression\_predictor module
+-------------------------------------------------
+
+.. automodule:: bill2watt.predictors.regression_predictor
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+bill2watt.predictors.slp\_predictor module
+------------------------------------------
+
+.. automodule:: bill2watt.predictors.slp_predictor
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: bill2watt.predictors
+   :members:
+   :undoc-members:
+   :show-inheritance:

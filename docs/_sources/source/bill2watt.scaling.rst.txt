@@ -1,0 +1,21 @@
+bill2watt.scaling package
+=========================
+
+Submodules
+----------
+
+bill2watt.scaling.flat module
+-----------------------------
+
+.. automodule:: bill2watt.scaling.flat
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: bill2watt.scaling
+   :members:
+   :undoc-members:
+   :show-inheritance:

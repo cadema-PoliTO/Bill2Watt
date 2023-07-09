@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>bill2watt.utils package &mdash; bill2watt  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            bill2watt
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">bill2watt.utils package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-bill2watt.utils.check_sizes">bill2watt.utils.check_sizes module</a><ul>
+<li><a class="reference internal" href="#functions">Functions</a></li>
+<li><a class="reference internal" href="#notes">Notes</a></li>
+<li><a class="reference internal" href="#info">Info</a></li>
+<li><a class="reference internal" href="#bill2watt.utils.check_sizes.check_y"><code class="docutils literal notranslate"><span class="pre">check_y()</span></code></a></li>
+<li><a class="reference internal" href="#bill2watt.utils.check_sizes.check_x"><code class="docutils literal notranslate"><span class="pre">check_x()</span></code></a></li>
+<li><a class="reference internal" href="#bill2watt.utils.check_sizes.check_nd"><code class="docutils literal notranslate"><span class="pre">check_nd()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#bill2watt-utils-eval-x-module">bill2watt.utils.eval_x module</a></li>
+<li><a class="reference internal" href="#module-bill2watt.utils.normalizing">bill2watt.utils.normalizing module</a><ul>
+<li><a class="reference internal" href="#id7">Info</a></li>
+<li><a class="reference internal" href="#bill2watt.utils.normalizing.check_array"><code class="docutils literal notranslate"><span class="pre">check_array()</span></code></a></li>
+<li><a class="reference internal" href="#bill2watt.utils.normalizing.XRowNormalizer"><code class="docutils literal notranslate"><span class="pre">XRowNormalizer</span></code></a><ul>
+<li><a class="reference internal" href="#bill2watt.utils.normalizing.XRowNormalizer.x_sum"><code class="docutils literal notranslate"><span class="pre">XRowNormalizer.x_sum</span></code></a></li>
+<li><a class="reference internal" href="#bill2watt.utils.normalizing.XRowNormalizer.n"><code class="docutils literal notranslate"><span class="pre">XRowNormalizer.n</span></code></a></li>
+<li><a class="reference internal" href="#bill2watt.utils.normalizing.XRowNormalizer.fit"><code class="docutils literal notranslate"><span class="pre">XRowNormalizer.fit()</span></code></a></li>
+<li><a class="reference internal" href="#bill2watt.utils.normalizing.XRowNormalizer.transform"><code class="docutils literal notranslate"><span class="pre">XRowNormalizer.transform()</span></code></a></li>
+<li><a class="reference internal" href="#bill2watt.utils.normalizing.XRowNormalizer.inverse_transform"><code class="docutils literal notranslate"><span class="pre">XRowNormalizer.inverse_transform()</span></code></a></li>
+<li><a class="reference internal" href="#bill2watt.utils.normalizing.XRowNormalizer.fit_transform"><code class="docutils literal notranslate"><span class="pre">XRowNormalizer.fit_transform()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#bill2watt.utils.normalizing.YRowNormalizer"><code class="docutils literal notranslate"><span class="pre">YRowNormalizer</span></code></a><ul>
+<li><a class="reference internal" href="#bill2watt.utils.normalizing.YRowNormalizer.transform"><code class="docutils literal notranslate"><span class="pre">YRowNormalizer.transform()</span></code></a></li>
+<li><a class="reference internal" href="#bill2watt.utils.normalizing.YRowNormalizer.inverse_transform"><code class="docutils literal notranslate"><span class="pre">YRowNormalizer.inverse_transform()</span></code></a></li>
+<li><a class="reference internal" href="#bill2watt.utils.normalizing.YRowNormalizer.fit_transform"><code class="docutils literal notranslate"><span class="pre">YRowNormalizer.fit_transform()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-bill2watt.utils">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">bill2watt</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">bill2watt.utils package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/source/bill2watt.utils.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="bill2watt-utils-package">
+<h1>bill2watt.utils package<a class="headerlink" href="#bill2watt-utils-package" title="Permalink to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-bill2watt.utils.check_sizes">
+<span id="bill2watt-utils-check-sizes-module"></span><h2>bill2watt.utils.check_sizes module<a class="headerlink" href="#module-bill2watt.utils.check_sizes" title="Permalink to this heading"></a></h2>
+<p>This module contains functions for checking the size of various arrays.</p>
+<section id="functions">
+<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>check_y(y)</dt><dd><p>Check the size of y ndarray and return y.</p>
+</dd>
+<dt>check_x(x)</dt><dd><p>Check the size of x ndarray and return x.</p>
+</dd>
+<dt>check_nd(nd)</dt><dd><p>Check the size of nd ndarray and return nd.</p>
+</dd>
+</dl>
+</section>
+<section id="notes">
+<h3>Notes<a class="headerlink" href="#notes" title="Permalink to this heading"></a></h3>
+</section>
+<section id="info">
+<h3>Info<a class="headerlink" href="#info" title="Permalink to this heading"></a></h3>
+<p>Author: G. Lorenti
+Email: <a class="reference external" href="mailto:gianmarco&#46;lorenti&#37;&#52;&#48;polito">gianmarco<span>&#46;</span>lorenti<span>&#64;</span>polito</a></p>
+</section>
+<dl class="py function">
+<dt class="sig sig-object py" id="bill2watt.utils.check_sizes.check_y">
+<span class="sig-prename descclassname"><span class="pre">bill2watt.utils.check_sizes.</span></span><span class="sig-name descname"><span class="pre">check_y</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bill2watt.utils.check_sizes.check_y" title="Permalink to this definition"></a></dt>
+<dd><p>Check the size of y ndarray.</p>
+<section id="parameters">
+<h3>Parameters<a class="headerlink" href="#parameters" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>y<span class="classifier">ndarray</span></dt><dd><p>Typical load profile to be checked.</p>
+</dd>
+</dl>
+</section>
+<section id="returns">
+<h3>Returns<a class="headerlink" href="#returns" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>ndarray</dt><dd><p>The input ‘y’.</p>
+</dd>
+</dl>
+</section>
+<section id="raises">
+<h3>Raises<a class="headerlink" href="#raises" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>AssertionError</dt><dd><p>If the size of ‘y’ does not comply with the requirements.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="bill2watt.utils.check_sizes.check_x">
+<span class="sig-prename descclassname"><span class="pre">bill2watt.utils.check_sizes.</span></span><span class="sig-name descname"><span class="pre">check_x</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bill2watt.utils.check_sizes.check_x" title="Permalink to this definition"></a></dt>
+<dd><p>Check the size of x ndarray.</p>
+<section id="id1">
+<h3>Parameters<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>x<span class="classifier">ndarray</span></dt><dd><p>Energy consumption values to be checked.</p>
+</dd>
+</dl>
+</section>
+<section id="id2">
+<h3>Returns<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>ndarray</dt><dd><p>The input ‘x’.</p>
+</dd>
+</dl>
+</section>
+<section id="id3">
+<h3>Raises<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>AssertionError</dt><dd><p>If the size of ‘x’ does not comply with the requirements.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="bill2watt.utils.check_sizes.check_nd">
+<span class="sig-prename descclassname"><span class="pre">bill2watt.utils.check_sizes.</span></span><span class="sig-name descname"><span class="pre">check_nd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nd</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bill2watt.utils.check_sizes.check_nd" title="Permalink to this definition"></a></dt>
+<dd><p>Check the size of nd ndarray.</p>
+<section id="id4">
+<h3>Parameters<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>nd<span class="classifier">ndarray</span></dt><dd><p>Number of days of each type to be checked.</p>
+</dd>
+</dl>
+</section>
+<section id="id5">
+<h3>Returns<a class="headerlink" href="#id5" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>ndarray</dt><dd><p>The input ‘nd’.</p>
+</dd>
+</dl>
+</section>
+<section id="id6">
+<h3>Raises<a class="headerlink" href="#id6" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>AssertionError</dt><dd><p>If the size of ‘nd’ does not comply with the requirements.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+</section>
+<section id="bill2watt-utils-eval-x-module">
+<h2>bill2watt.utils.eval_x module<a class="headerlink" href="#bill2watt-utils-eval-x-module" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-bill2watt.utils.normalizing">
+<span id="bill2watt-utils-normalizing-module"></span><h2>bill2watt.utils.normalizing module<a class="headerlink" href="#module-bill2watt.utils.normalizing" title="Permalink to this heading"></a></h2>
+<section id="id7">
+<h3>Info<a class="headerlink" href="#id7" title="Permalink to this heading"></a></h3>
+<p>Author: G. Lorenti
+Email: <a class="reference external" href="mailto:gianmarco&#46;lorenti&#37;&#52;&#48;polito&#46;it">gianmarco<span>&#46;</span>lorenti<span>&#64;</span>polito<span>&#46;</span>it</a></p>
+</section>
+<dl class="py function">
+<dt class="sig sig-object py" id="bill2watt.utils.normalizing.check_array">
+<span class="sig-prename descclassname"><span class="pre">bill2watt.utils.normalizing.</span></span><span class="sig-name descname"><span class="pre">check_array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bill2watt.utils.normalizing.check_array" title="Permalink to this definition"></a></dt>
+<dd><p>Validate the input array and return a reshaped version if necessary.</p>
+<section id="id8">
+<h3>Parameters<a class="headerlink" href="#id8" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>x<span class="classifier">ndarray</span></dt><dd><p>The input array to validate.</p>
+</dd>
+</dl>
+</section>
+<section id="id9">
+<h3>Returns<a class="headerlink" href="#id9" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>ndarray</dt><dd><p>The reshaped input array.</p>
+</dd>
+<dt>bool</dt><dd><p>Whether the input array is mono-dimensional or not.</p>
+</dd>
+</dl>
+</section>
+<section id="id10">
+<h3>Raises<a class="headerlink" href="#id10" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>AssertionError</dt><dd><p>If the input is not a 1D or 2D NumPy array.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="bill2watt.utils.normalizing.XRowNormalizer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bill2watt.utils.normalizing.</span></span><span class="sig-name descname"><span class="pre">XRowNormalizer</span></span><a class="headerlink" href="#bill2watt.utils.normalizing.XRowNormalizer" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Row-wise normalizer for X data.</p>
+<p>This class provides methods to normalize and denormalize row-wise data
+based on the sum of each row.</p>
+<section id="id11">
+<h3>Parameters<a class="headerlink" href="#id11" title="Permalink to this heading"></a></h3>
+</section>
+<section id="attributes">
+<h3>Attributes<a class="headerlink" href="#attributes" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>x_sum (property)<span class="classifier">ndarray or None</span></dt><dd><p>Normalization values in the X data.</p>
+</dd>
+<dt>n (property)<span class="classifier">int</span></dt><dd><p>Number of points in the fitting data.</p>
+</dd>
+</dl>
+</section>
+<section id="methods">
+<h3>Methods<a class="headerlink" href="#methods" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>fit(x)</dt><dd><p>Fit the normalizer to the given X data.</p>
+</dd>
+<dt>transform(x)</dt><dd><p>Normalize the input X data.</p>
+</dd>
+<dt>inverse_transform(x_norm)</dt><dd><p>Denormalize the normalized X data.</p>
+</dd>
+<dt>fit_transform(x)</dt><dd><p>Fit the normalizer to the given X data and normalize it.</p>
+</dd>
+</dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="bill2watt.utils.normalizing.XRowNormalizer.x_sum">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">x_sum</span></span><a class="headerlink" href="#bill2watt.utils.normalizing.XRowNormalizer.x_sum" title="Permalink to this definition"></a></dt>
+<dd><p>Get the normalization values of the X data.</p>
+<section id="id12">
+<h4>Returns<a class="headerlink" href="#id12" title="Permalink to this heading"></a></h4>
+<dl class="simple">
+<dt>ndarray or None</dt><dd><p>Values of self._x_sum</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="bill2watt.utils.normalizing.XRowNormalizer.n">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">n</span></span><a class="headerlink" href="#bill2watt.utils.normalizing.XRowNormalizer.n" title="Permalink to this definition"></a></dt>
+<dd><p>Get the number of rows in the X data.</p>
+<section id="id13">
+<h4>Returns<a class="headerlink" href="#id13" title="Permalink to this heading"></a></h4>
+<dl class="simple">
+<dt>int or None</dt><dd><p>The number of rows in the X data.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bill2watt.utils.normalizing.XRowNormalizer.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bill2watt.utils.normalizing.XRowNormalizer.fit" title="Permalink to this definition"></a></dt>
+<dd><p>Fit the normalizer to the given X data.</p>
+<section id="id14">
+<h4>Parameters<a class="headerlink" href="#id14" title="Permalink to this heading"></a></h4>
+<dl class="simple">
+<dt>x<span class="classifier">ndarray</span></dt><dd><p>The input X data.</p>
+</dd>
+</dl>
+</section>
+<section id="id15">
+<h4>Raises<a class="headerlink" href="#id15" title="Permalink to this heading"></a></h4>
+<dl class="simple">
+<dt>AssertionError</dt><dd><p>If the input ‘x’ does not meet the requirements. See function
+‘check_array’ for further details.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bill2watt.utils.normalizing.XRowNormalizer.transform">
+<span class="sig-name descname"><span class="pre">transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bill2watt.utils.normalizing.XRowNormalizer.transform" title="Permalink to this definition"></a></dt>
+<dd><p>Normalize the input X data.</p>
+<section id="id16">
+<h4>Parameters<a class="headerlink" href="#id16" title="Permalink to this heading"></a></h4>
+<dl class="simple">
+<dt>x<span class="classifier">ndarray</span></dt><dd><p>The input X data.</p>
+</dd>
+</dl>
+</section>
+<section id="id17">
+<h4>Returns<a class="headerlink" href="#id17" title="Permalink to this heading"></a></h4>
+<dl class="simple">
+<dt>ndarray</dt><dd><p>The normalized X data.</p>
+</dd>
+</dl>
+</section>
+<section id="id18">
+<h4>Raises<a class="headerlink" href="#id18" title="Permalink to this heading"></a></h4>
+<dl class="simple">
+<dt>AssertionError</dt><dd><p>If the input ‘x’ does not meet the requirements. See function
+‘check_array’ for further details. If the length of ‘x’ does not
+match the number of rows in the X data.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bill2watt.utils.normalizing.XRowNormalizer.inverse_transform">
+<span class="sig-name descname"><span class="pre">inverse_transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x_norm</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bill2watt.utils.normalizing.XRowNormalizer.inverse_transform" title="Permalink to this definition"></a></dt>
+<dd><p>Denormalize the normalized X data.</p>
+<section id="id19">
+<h4>Parameters<a class="headerlink" href="#id19" title="Permalink to this heading"></a></h4>
+<dl class="simple">
+<dt>x_norm<span class="classifier">ndarray</span></dt><dd><p>The normalized X data.</p>
+</dd>
+</dl>
+</section>
+<section id="id20">
+<h4>Returns<a class="headerlink" href="#id20" title="Permalink to this heading"></a></h4>
+<dl class="simple">
+<dt>ndarray</dt><dd><p>The denormalized X data.</p>
+</dd>
+</dl>
+</section>
+<section id="id21">
+<h4>Raises<a class="headerlink" href="#id21" title="Permalink to this heading"></a></h4>
+<dl class="simple">
+<dt>AssertionError</dt><dd><p>If the input ‘x_norm’ does not meet the requirements. See function
+‘check_array’ for further details. If the length of ‘x’ does not
+match the number of rows in the X data.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bill2watt.utils.normalizing.XRowNormalizer.fit_transform">
+<span class="sig-name descname"><span class="pre">fit_transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bill2watt.utils.normalizing.XRowNormalizer.fit_transform" title="Permalink to this definition"></a></dt>
+<dd><p>Fit the normalizer to the given X data and normalize it.</p>
+<section id="id22">
+<h4>Parameters<a class="headerlink" href="#id22" title="Permalink to this heading"></a></h4>
+<dl class="simple">
+<dt>x<span class="classifier">ndarray</span></dt><dd><p>The input X data.</p>
+</dd>
+</dl>
+</section>
+<section id="id23">
+<h4>Returns<a class="headerlink" href="#id23" title="Permalink to this heading"></a></h4>
+<dl class="simple">
+<dt>ndarray</dt><dd><p>The normalized X data.</p>
+</dd>
+</dl>
+</section>
+<section id="id24">
+<h4>Notes<a class="headerlink" href="#id24" title="Permalink to this heading"></a></h4>
+<p>See ‘fit’ and ‘transform’ methods for further details.</p>
+</section>
+</dd></dl>
+
+</section>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="bill2watt.utils.normalizing.YRowNormalizer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bill2watt.utils.normalizing.</span></span><span class="sig-name descname"><span class="pre">YRowNormalizer</span></span><a class="headerlink" href="#bill2watt.utils.normalizing.YRowNormalizer" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#bill2watt.utils.normalizing.XRowNormalizer" title="bill2watt.utils.normalizing.XRowNormalizer"><code class="xref py py-class docutils literal notranslate"><span class="pre">XRowNormalizer</span></code></a></p>
+<p>Row-wise normalizer for Y data.</p>
+<p>This class provides methods to normalize and denormalize row-wise data
+based on the sum of each row, using the sum of X data for normalization.</p>
+<section id="id25">
+<h3>Attributes<a class="headerlink" href="#id25" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>x_sum (property)<span class="classifier">ndarray or None</span></dt><dd><p>Normalization values in the X data.</p>
+</dd>
+<dt>n (property)<span class="classifier">int</span></dt><dd><p>Number of points in the fitting data.</p>
+</dd>
+</dl>
+</section>
+<section id="id26">
+<h3>Methods<a class="headerlink" href="#id26" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>transform(y)</dt><dd><p>Normalize the input Y data.</p>
+</dd>
+<dt>inverse_transform(y_norm)</dt><dd><p>Denormalize the normalized Y data.</p>
+</dd>
+<dt>fit_transform(y)</dt><dd><p>Fit the normalizer to the given Y data and normalize it.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="bill2watt.utils.normalizing.YRowNormalizer.transform">
+<span class="sig-name descname"><span class="pre">transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bill2watt.utils.normalizing.YRowNormalizer.transform" title="Permalink to this definition"></a></dt>
+<dd><p>Normalize the input Y data.</p>
+<section id="id27">
+<h4>Parameters<a class="headerlink" href="#id27" title="Permalink to this heading"></a></h4>
+<dl class="simple">
+<dt>y<span class="classifier">ndarray</span></dt><dd><p>The input Y data.</p>
+</dd>
+</dl>
+</section>
+<section id="id28">
+<h4>Returns<a class="headerlink" href="#id28" title="Permalink to this heading"></a></h4>
+<dl class="simple">
+<dt>ndarray</dt><dd><p>The normalized Y data.</p>
+</dd>
+</dl>
+</section>
+<section id="id29">
+<h4>Raises<a class="headerlink" href="#id29" title="Permalink to this heading"></a></h4>
+<dl class="simple">
+<dt>AssertionError</dt><dd><p>If the input ‘y’ does not meet the requirements. See function
+‘check_array’ for further details. If the length of ‘y’ does not
+match the number of rows in the Y data.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bill2watt.utils.normalizing.YRowNormalizer.inverse_transform">
+<span class="sig-name descname"><span class="pre">inverse_transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y_norm</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bill2watt.utils.normalizing.YRowNormalizer.inverse_transform" title="Permalink to this definition"></a></dt>
+<dd><p>Denormalize the normalized Y data.</p>
+<section id="id30">
+<h4>Parameters<a class="headerlink" href="#id30" title="Permalink to this heading"></a></h4>
+<dl class="simple">
+<dt>y_norm<span class="classifier">ndarray</span></dt><dd><p>The normalized Y data.</p>
+</dd>
+</dl>
+</section>
+<section id="id31">
+<h4>Returns<a class="headerlink" href="#id31" title="Permalink to this heading"></a></h4>
+<dl class="simple">
+<dt>ndarray</dt><dd><p>The denormalized Y data.</p>
+</dd>
+</dl>
+</section>
+<section id="id32">
+<h4>Raises<a class="headerlink" href="#id32" title="Permalink to this heading"></a></h4>
+<dl class="simple">
+<dt>AssertionError</dt><dd><p>If the input ‘y_norm’ does not meet the requirements. See function
+‘check_array’ for further details. If the length of ‘y’ does not
+match the number of rows in the Y data.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bill2watt.utils.normalizing.YRowNormalizer.fit_transform">
+<span class="sig-name descname"><span class="pre">fit_transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bill2watt.utils.normalizing.YRowNormalizer.fit_transform" title="Permalink to this definition"></a></dt>
+<dd><p>Fit the normalizer to the given X data and normalize the Y data.</p>
+<section id="id33">
+<h4>Parameters<a class="headerlink" href="#id33" title="Permalink to this heading"></a></h4>
+<dl class="simple">
+<dt>x<span class="classifier">ndarray</span></dt><dd><p>The input X data.</p>
+</dd>
+<dt>y<span class="classifier">ndarray</span></dt><dd><p>The input Y data.</p>
+</dd>
+</dl>
+</section>
+<section id="id34">
+<h4>Returns<a class="headerlink" href="#id34" title="Permalink to this heading"></a></h4>
+<dl class="simple">
+<dt>ndarray</dt><dd><p>The normalized Y data.</p>
+</dd>
+</dl>
+</section>
+<section id="id35">
+<h4>Notes<a class="headerlink" href="#id35" title="Permalink to this heading"></a></h4>
+<p>See ‘fit’ and ‘transform’ methods for further details.</p>
+</section>
+</dd></dl>
+
+</section>
+</dd></dl>
+
+</section>
+<section id="module-bill2watt.utils">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-bill2watt.utils" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, G. Lorenti (CC-BY 4.0).</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

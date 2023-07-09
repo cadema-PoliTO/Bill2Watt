@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>bill2watt.scaling package &mdash; bill2watt  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            bill2watt
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">bill2watt.scaling package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-bill2watt.scaling.flat">bill2watt.scaling.flat module</a><ul>
+<li><a class="reference internal" href="#notes">Notes</a></li>
+<li><a class="reference internal" href="#info">Info</a></li>
+<li><a class="reference internal" href="#bill2watt.scaling.flat.evaluate"><code class="docutils literal notranslate"><span class="pre">evaluate()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-bill2watt.scaling">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">bill2watt</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">bill2watt.scaling package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/source/bill2watt.scaling.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="bill2watt-scaling-package">
+<h1>bill2watt.scaling package<a class="headerlink" href="#bill2watt-scaling-package" title="Permalink to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-bill2watt.scaling.flat">
+<span id="bill2watt-scaling-flat-module"></span><h2>bill2watt.scaling.flat module<a class="headerlink" href="#module-bill2watt.scaling.flat" title="Permalink to this heading"></a></h2>
+<p>This module contains the function ‘evaluate’, used to scale a typical load
+profile according to certain ToU monthly energy consumption values, using a
+flat approach.</p>
+<section id="notes">
+<h3>Notes<a class="headerlink" href="#notes" title="Permalink to this heading"></a></h3>
+</section>
+<section id="info">
+<h3>Info<a class="headerlink" href="#info" title="Permalink to this heading"></a></h3>
+<p>Author: G. Lorenti
+Email: <a class="reference external" href="mailto:gianmarco&#46;lorenti&#37;&#52;&#48;polito&#46;it">gianmarco<span>&#46;</span>lorenti<span>&#64;</span>polito<span>&#46;</span>it</a></p>
+</section>
+<dl class="py function">
+<dt class="sig sig-object py" id="bill2watt.scaling.flat.evaluate">
+<span class="sig-prename descclassname"><span class="pre">bill2watt.scaling.flat.</span></span><span class="sig-name descname"><span class="pre">evaluate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_des</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nd</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bill2watt.scaling.flat.evaluate" title="Permalink to this definition"></a></dt>
+<dd><p>Scale a typical load profile (y) so that the total monthly energy
+consumption associated with it equals the desired value (x_des).</p>
+<section id="parameters">
+<h3>Parameters<a class="headerlink" href="#parameters" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>y<span class="classifier">ndarray</span></dt><dd><p>Typical load profile to be scaled.</p>
+</dd>
+<dt>x_des<span class="classifier">float or ndarray</span></dt><dd><p>Desired monthly energy consumption (divided into ToU tariffs if ndarray).</p>
+</dd>
+<dt>nd<span class="classifier">ndarray, optional</span></dt><dd><p>Number of days of each type in the month. If provided, ‘x’ should not
+be provided.</p>
+</dd>
+<dt>x<span class="classifier">float or ndarray, optional</span></dt><dd><p>Monthly energy consumption associated with ‘y’ (divided into ToU
+tariffs if ndarray). If provided, ‘nd’ should not be provided.</p>
+</dd>
+</dl>
+</section>
+<section id="returns">
+<h3>Returns<a class="headerlink" href="#returns" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>y_scale<span class="classifier">ndarray</span></dt><dd><p>Scaled load profile.</p>
+</dd>
+</dl>
+</section>
+<section id="raises">
+<h3>Raises<a class="headerlink" href="#raises" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>AssertionError</dt><dd><p>If ‘y’, ‘x_des’, ‘nd’, or ‘x’ do not comply with the
+requirements, or if ‘nd’ are ‘x’ are provided at the same time.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+</section>
+<section id="module-bill2watt.scaling">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-bill2watt.scaling" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, G. Lorenti (CC-BY 4.0).</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

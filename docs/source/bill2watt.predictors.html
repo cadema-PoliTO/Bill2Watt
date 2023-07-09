@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>bill2watt.predictors package &mdash; bill2watt  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            bill2watt
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">bill2watt.predictors package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-bill2watt.predictors.base_predictor">bill2watt.predictors.base_predictor module</a><ul>
+<li><a class="reference internal" href="#notes">Notes</a></li>
+<li><a class="reference internal" href="#info">Info</a></li>
+<li><a class="reference internal" href="#bill2watt.predictors.base_predictor.BasePredictor"><code class="docutils literal notranslate"><span class="pre">BasePredictor</span></code></a><ul>
+<li><a class="reference internal" href="#bill2watt.predictors.base_predictor.BasePredictor.x_data"><code class="docutils literal notranslate"><span class="pre">BasePredictor.x_data</span></code></a></li>
+<li><a class="reference internal" href="#bill2watt.predictors.base_predictor.BasePredictor.y_data"><code class="docutils literal notranslate"><span class="pre">BasePredictor.y_data</span></code></a></li>
+<li><a class="reference internal" href="#bill2watt.predictors.base_predictor.BasePredictor.n"><code class="docutils literal notranslate"><span class="pre">BasePredictor.n</span></code></a></li>
+<li><a class="reference internal" href="#bill2watt.predictors.base_predictor.BasePredictor.add_data"><code class="docutils literal notranslate"><span class="pre">BasePredictor.add_data()</span></code></a></li>
+<li><a class="reference internal" href="#bill2watt.predictors.base_predictor.BasePredictor.predict"><code class="docutils literal notranslate"><span class="pre">BasePredictor.predict()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-bill2watt.predictors.category_predictor">bill2watt.predictors.category_predictor module</a><ul>
+<li><a class="reference internal" href="#id5">Notes</a></li>
+<li><a class="reference internal" href="#id6">Info</a></li>
+<li><a class="reference internal" href="#bill2watt.predictors.category_predictor.CategoryPredictor"><code class="docutils literal notranslate"><span class="pre">CategoryPredictor</span></code></a><ul>
+<li><a class="reference internal" href="#bill2watt.predictors.category_predictor.CategoryPredictor.category"><code class="docutils literal notranslate"><span class="pre">CategoryPredictor.category</span></code></a></li>
+<li><a class="reference internal" href="#bill2watt.predictors.category_predictor.CategoryPredictor.y_categories"><code class="docutils literal notranslate"><span class="pre">CategoryPredictor.y_categories</span></code></a></li>
+<li><a class="reference internal" href="#bill2watt.predictors.category_predictor.CategoryPredictor.categories"><code class="docutils literal notranslate"><span class="pre">CategoryPredictor.categories</span></code></a></li>
+<li><a class="reference internal" href="#bill2watt.predictors.category_predictor.CategoryPredictor.predict"><code class="docutils literal notranslate"><span class="pre">CategoryPredictor.predict()</span></code></a></li>
+<li><a class="reference internal" href="#bill2watt.predictors.category_predictor.CategoryPredictor.add_data"><code class="docutils literal notranslate"><span class="pre">CategoryPredictor.add_data()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-bill2watt.predictors.classification_predictor">bill2watt.predictors.classification_predictor module</a><ul>
+<li><a class="reference internal" href="#id20">Notes</a></li>
+<li><a class="reference internal" href="#id21">Info</a></li>
+<li><a class="reference internal" href="#bill2watt.predictors.classification_predictor.ClassificationPredictor"><code class="docutils literal notranslate"><span class="pre">ClassificationPredictor</span></code></a><ul>
+<li><a class="reference internal" href="#bill2watt.predictors.classification_predictor.ClassificationPredictor.predict"><code class="docutils literal notranslate"><span class="pre">ClassificationPredictor.predict()</span></code></a></li>
+<li><a class="reference internal" href="#bill2watt.predictors.classification_predictor.ClassificationPredictor.add_data"><code class="docutils literal notranslate"><span class="pre">ClassificationPredictor.add_data()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-bill2watt.predictors.flat_predictor">bill2watt.predictors.flat_predictor module</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#id33">Notes</a></li>
+<li><a class="reference internal" href="#id34">Info</a></li>
+<li><a class="reference internal" href="#bill2watt.predictors.flat_predictor.FlatPredictor"><code class="docutils literal notranslate"><span class="pre">FlatPredictor</span></code></a><ul>
+<li><a class="reference internal" href="#bill2watt.predictors.flat_predictor.FlatPredictor.predict"><code class="docutils literal notranslate"><span class="pre">FlatPredictor.predict()</span></code></a></li>
+<li><a class="reference internal" href="#bill2watt.predictors.flat_predictor.FlatPredictor.add_data"><code class="docutils literal notranslate"><span class="pre">FlatPredictor.add_data()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-bill2watt.predictors.regression_predictor">bill2watt.predictors.regression_predictor module</a><ul>
+<li><a class="reference internal" href="#id47">Notes</a></li>
+<li><a class="reference internal" href="#id48">Info</a></li>
+<li><a class="reference internal" href="#bill2watt.predictors.regression_predictor.RegressionPredictor"><code class="docutils literal notranslate"><span class="pre">RegressionPredictor</span></code></a><ul>
+<li><a class="reference internal" href="#bill2watt.predictors.regression_predictor.RegressionPredictor.predict"><code class="docutils literal notranslate"><span class="pre">RegressionPredictor.predict()</span></code></a></li>
+<li><a class="reference internal" href="#bill2watt.predictors.regression_predictor.RegressionPredictor.add_data"><code class="docutils literal notranslate"><span class="pre">RegressionPredictor.add_data()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-bill2watt.predictors.slp_predictor">bill2watt.predictors.slp_predictor module</a><ul>
+<li><a class="reference internal" href="#id60">Notes</a></li>
+<li><a class="reference internal" href="#id61">Info</a></li>
+<li><a class="reference internal" href="#bill2watt.predictors.slp_predictor.SLPPredictor"><code class="docutils literal notranslate"><span class="pre">SLPPredictor</span></code></a><ul>
+<li><a class="reference internal" href="#bill2watt.predictors.slp_predictor.SLPPredictor.predict"><code class="docutils literal notranslate"><span class="pre">SLPPredictor.predict()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-bill2watt.predictors">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">bill2watt</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">bill2watt.predictors package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/source/bill2watt.predictors.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="bill2watt-predictors-package">
+<h1>bill2watt.predictors package<a class="headerlink" href="#bill2watt-predictors-package" title="Permalink to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-bill2watt.predictors.base_predictor">
+<span id="bill2watt-predictors-base-predictor-module"></span><h2>bill2watt.predictors.base_predictor module<a class="headerlink" href="#module-bill2watt.predictors.base_predictor" title="Permalink to this heading"></a></h2>
+<p>This module contains the ‘BasePredictor’ class, which is used as a base for the
+models that predict typical load profiles based on monthly time-of-use (ToU)
+energy consumption values.</p>
+<section id="notes">
+<h3>Notes<a class="headerlink" href="#notes" title="Permalink to this heading"></a></h3>
+</section>
+<section id="info">
+<h3>Info<a class="headerlink" href="#info" title="Permalink to this heading"></a></h3>
+<p>Author: G. Lorenti
+Email: <a class="reference external" href="mailto:gianmarco&#46;lorenti&#37;&#52;&#48;polito&#46;it">gianmarco<span>&#46;</span>lorenti<span>&#64;</span>polito<span>&#46;</span>it</a></p>
+</section>
+<dl class="py class">
+<dt class="sig sig-object py" id="bill2watt.predictors.base_predictor.BasePredictor">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bill2watt.predictors.base_predictor.</span></span><span class="sig-name descname"><span class="pre">BasePredictor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bill2watt.predictors.base_predictor.BasePredictor" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Base class for predictors of typical load profiles (y) based on monthly
+time-of-use (ToU) energy consumption values (x).</p>
+<section id="parameters">
+<h3>Parameters<a class="headerlink" href="#parameters" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>x_data<span class="classifier">pandas.DataFrame or None, optional</span></dt><dd><p>ToU energy consumption values associated with the SLPs.</p>
+</dd>
+<dt>y_data<span class="classifier">pandas.DataFrame or None, optional</span></dt><dd><p>Typical load profiles of the Standard Load Profiles (SLPs).</p>
+</dd>
+</dl>
+</section>
+<section id="attributes">
+<h3>Attributes<a class="headerlink" href="#attributes" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>x_data (property)<span class="classifier">pd.DataFrame or None</span></dt><dd><p>ToU energy consumption values of the data points used to build the
+predictor. None for predictors that do not require data points.</p>
+</dd>
+<dt>y_data (property)<span class="classifier">pd.DataFrame or None</span></dt><dd><p>Typical load profiles of the data points used to build the predictor.
+None for predictors that do not require data points.</p>
+</dd>
+<dt>n (property)<span class="classifier">int</span></dt><dd><p>Number of data points used to build the predictor.</p>
+</dd>
+</dl>
+</section>
+<section id="methods">
+<h3>Methods<a class="headerlink" href="#methods" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>add_data(x_data, y_data, update_existing=True)</dt><dd><p>Add new data points to the predictor.</p>
+</dd>
+<dt>predict(x, nd)</dt><dd><p>Placeholder method that must be implemented by child classes.</p>
+</dd>
+</dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="bill2watt.predictors.base_predictor.BasePredictor.x_data">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">x_data</span></span><a class="headerlink" href="#bill2watt.predictors.base_predictor.BasePredictor.x_data" title="Permalink to this definition"></a></dt>
+<dd><p>Getter for the x_data property.</p>
+<p>Returns a copy of the x_data if it is not None, otherwise returns None.</p>
+<section id="returns">
+<h4>Returns<a class="headerlink" href="#returns" title="Permalink to this heading"></a></h4>
+<dl class="simple">
+<dt>pd.DataFrame or None</dt><dd><p>Copy of the x_data or None.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="bill2watt.predictors.base_predictor.BasePredictor.y_data">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">y_data</span></span><a class="headerlink" href="#bill2watt.predictors.base_predictor.BasePredictor.y_data" title="Permalink to this definition"></a></dt>
+<dd><p>Getter for the y_data property.</p>
+<p>Returns a copy of the y_data if it is not None, otherwise returns None.</p>
+<section id="id1">
+<h4>Returns<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h4>
+<dl class="simple">
+<dt>pd.DataFrame or None</dt><dd><p>Copy of the y_data or None.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="bill2watt.predictors.base_predictor.BasePredictor.n">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">n</span></span><a class="headerlink" href="#bill2watt.predictors.base_predictor.BasePredictor.n" title="Permalink to this definition"></a></dt>
+<dd><p>Getter for the n property.</p>
+<p>Returns the number of data points (length of x_data or y_data).
+Returns None if both x_data and y_data are None.</p>
+<section id="id2">
+<h4>Returns<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h4>
+<dl class="simple">
+<dt>int</dt><dd><p>Number of data points.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bill2watt.predictors.base_predictor.BasePredictor.add_data">
+<span class="sig-name descname"><span class="pre">add_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">update_existing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bill2watt.predictors.base_predictor.BasePredictor.add_data" title="Permalink to this definition"></a></dt>
+<dd><p>Add new data points to the predictor.</p>
+<section id="id3">
+<h4>Parameters<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h4>
+<dl class="simple">
+<dt>x_data<span class="classifier">pd.DataFrame or None</span></dt><dd><p>ToU energy consumption values of the new data points.
+None if no data points are provided.</p>
+</dd>
+<dt>y_data<span class="classifier">pd.DataFrame or None</span></dt><dd><p>Typical load profiles of the new data points.
+None if no data points are provided.</p>
+</dd>
+<dt>update_existing<span class="classifier">bool, optional</span></dt><dd><p>Flag indicating whether to update existing data points (i.e.,
+already in the index). Default is True.</p>
+</dd>
+</dl>
+</section>
+<section id="id4">
+<h4>Returns<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h4>
+<dl class="simple">
+<dt>pd.DataFrame or None</dt><dd><p>The updated x_data after adding new data points.</p>
+</dd>
+<dt>pd.DataFrame or None</dt><dd><p>The updated y_data after adding new data points.</p>
+</dd>
+</dl>
+</section>
+<section id="raises">
+<h4>Raises<a class="headerlink" href="#raises" title="Permalink to this heading"></a></h4>
+<dl class="simple">
+<dt>AssertionError</dt><dd><p>If ‘x_data’ and ‘y_data’ do not comply with requirements for new
+data points.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bill2watt.predictors.base_predictor.BasePredictor.predict">
+<span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nd</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bill2watt.predictors.base_predictor.BasePredictor.predict" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+</dd></dl>
+
+</section>
+<section id="module-bill2watt.predictors.category_predictor">
+<span id="bill2watt-predictors-category-predictor-module"></span><h2>bill2watt.predictors.category_predictor module<a class="headerlink" href="#module-bill2watt.predictors.category_predictor" title="Permalink to this heading"></a></h2>
+<p>This module contains the ‘CategoryPredictor’ class, which is used for
+predicting typical load profiles based on monthly time-of-use (ToU) energy
+consumption values, using training data and an a-priori categorization
+approach.</p>
+<section id="id5">
+<h3>Notes<a class="headerlink" href="#id5" title="Permalink to this heading"></a></h3>
+</section>
+<section id="id6">
+<h3>Info<a class="headerlink" href="#id6" title="Permalink to this heading"></a></h3>
+<p>Author: G. Lorenti
+Email: <a class="reference external" href="mailto:gianmarco&#46;lorenti&#37;&#52;&#48;polito&#46;it">gianmarco<span>&#46;</span>lorenti<span>&#64;</span>polito<span>&#46;</span>it</a></p>
+</section>
+<dl class="py class">
+<dt class="sig sig-object py" id="bill2watt.predictors.category_predictor.CategoryPredictor">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bill2watt.predictors.category_predictor.</span></span><span class="sig-name descname"><span class="pre">CategoryPredictor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">category</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bill2watt.predictors.category_predictor.CategoryPredictor" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#bill2watt.predictors.base_predictor.BasePredictor" title="bill2watt.predictors.base_predictor.BasePredictor"><code class="xref py py-class docutils literal notranslate"><span class="pre">BasePredictor</span></code></a></p>
+<p>This class implements a predictor for evaluating typical load profiles
+based on monthly time-of-use (ToU) energy consumption values, using
+categories defined by a specific key.</p>
+<section id="id7">
+<h3>Parameters<a class="headerlink" href="#id7" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>x_data<span class="classifier">pandas.DataFrame or None</span></dt><dd><p>ToU energy consumption values associated with the training points.
+If None, default values are used.</p>
+</dd>
+<dt>y_data<span class="classifier">pandas.DataFrame or None</span></dt><dd><p>Typical load profiles of the training points.
+If None, default values are used.</p>
+</dd>
+<dt>category<span class="classifier">str or None, optional</span></dt><dd><p>The name of the column/index level used for categorization.
+If None and ‘y_data’ is not None, the name of the index of ‘y_data’
+is used.</p>
+</dd>
+</dl>
+</section>
+<section id="id8">
+<h3>Attributes<a class="headerlink" href="#id8" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>x_data (property)<span class="classifier">pandas.DataFrame or None</span></dt><dd><p>ToU energy consumption values of the training points.
+If None, default values are used.</p>
+</dd>
+<dt>y_data (property)<span class="classifier">pandas.DataFrame or None</span></dt><dd><p>Typical load profiles of the training points.
+If None, default values are used.</p>
+</dd>
+<dt>category (property)<span class="classifier">str or None</span></dt><dd><p>The name of the column/index level used for categorization.</p>
+</dd>
+<dt>y_categories (property)<span class="classifier">pandas.DataFrame or None</span></dt><dd><p>Categorized typical load profiles based on the training data.
+If None, no categorization has been performed yet.</p>
+</dd>
+<dt>categories (property)<span class="classifier">list or None</span></dt><dd><p>Unique category values present in the categorized data.
+If None, no categorization has been performed yet.</p>
+</dd>
+</dl>
+</section>
+<section id="id9">
+<h3>Methods<a class="headerlink" href="#id9" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>predict(x, key)</dt><dd><p>Evaluate typical load profiles based on ToU energy consumption values
+and using the categories.</p>
+</dd>
+<dt>add_data(x_data, y_data, <a href="#id10"><span class="problematic" id="id11">**</span></a>kwargs)</dt><dd><p>Add new data points to the predictor and re-train the categorizer.</p>
+</dd>
+</dl>
+</section>
+<section id="see-also">
+<h3>See Also<a class="headerlink" href="#see-also" title="Permalink to this heading"></a></h3>
+<p>BasePredictor : Base class for typical load profile predictors.</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="bill2watt.predictors.category_predictor.CategoryPredictor.category">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">category</span></span><a class="headerlink" href="#bill2watt.predictors.category_predictor.CategoryPredictor.category" title="Permalink to this definition"></a></dt>
+<dd><p>Get or set the name of the column/index level used for categorization.</p>
+<section id="id12">
+<h4>Returns<a class="headerlink" href="#id12" title="Permalink to this heading"></a></h4>
+<dl class="simple">
+<dt>str or None</dt><dd><p>The name of the column/index level used for categorization.
+If None, no categorization has been performed yet.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="bill2watt.predictors.category_predictor.CategoryPredictor.y_categories">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">y_categories</span></span><a class="headerlink" href="#bill2watt.predictors.category_predictor.CategoryPredictor.y_categories" title="Permalink to this definition"></a></dt>
+<dd><p>Categorized typical load profiles based on the training data.</p>
+<section id="id13">
+<h4>Returns<a class="headerlink" href="#id13" title="Permalink to this heading"></a></h4>
+<dl class="simple">
+<dt>pandas.DataFrame or None</dt><dd><p>Categorized typical load profiles.
+If None, no categorization has been performed yet.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="bill2watt.predictors.category_predictor.CategoryPredictor.categories">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">categories</span></span><a class="headerlink" href="#bill2watt.predictors.category_predictor.CategoryPredictor.categories" title="Permalink to this definition"></a></dt>
+<dd><p>Unique category values present in the categorized data.</p>
+<section id="id14">
+<h4>Returns<a class="headerlink" href="#id14" title="Permalink to this heading"></a></h4>
+<dl class="simple">
+<dt>list or None</dt><dd><p>Unique category values.
+If None, no categorization has been performed yet.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bill2watt.predictors.category_predictor.CategoryPredictor.predict">
+<span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bill2watt.predictors.category_predictor.CategoryPredictor.predict" title="Permalink to this definition"></a></dt>
+<dd><p>Evaluate typical load profiles based on ToU energy consumption values
+and using the categories.</p>
+<section id="id15">
+<h4>Parameters<a class="headerlink" href="#id15" title="Permalink to this heading"></a></h4>
+<dl class="simple">
+<dt>x<span class="classifier">array-like</span></dt><dd><p>ToU energy consumption values of the point(s) to predict.</p>
+</dd>
+<dt>key<span class="classifier">tuple or list of tuples</span></dt><dd><p>Key values related to the categorized data associated with each
+point.</p>
+</dd>
+</dl>
+</section>
+<section id="id16">
+<h4>Returns<a class="headerlink" href="#id16" title="Permalink to this heading"></a></h4>
+<dl class="simple">
+<dt>np.ndarray</dt><dd><p>Predicted typical load profiles based on the provided inputs.</p>
+</dd>
+</dl>
+</section>
+<section id="id17">
+<h4>Raises<a class="headerlink" href="#id17" title="Permalink to this heading"></a></h4>
+<dl class="simple">
+<dt>AssertionError</dt><dd><p>If any inconsistency is found in the input data or key values are
+not present in the categorized data.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bill2watt.predictors.category_predictor.CategoryPredictor.add_data">
+<span class="sig-name descname"><span class="pre">add_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_data</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bill2watt.predictors.category_predictor.CategoryPredictor.add_data" title="Permalink to this definition"></a></dt>
+<dd><p>Add new training points to the predictor and re-train the categorizer.</p>
+<section id="id18">
+<h4>Parameters<a class="headerlink" href="#id18" title="Permalink to this heading"></a></h4>
+<dl class="simple">
+<dt>x_data<span class="classifier">array-like</span></dt><dd><p>ToU energy consumption values of the new data points.</p>
+</dd>
+<dt>y_data<span class="classifier">array-like</span></dt><dd><p>Typical load profiles of the new data points.</p>
+</dd>
+</dl>
+</section>
+<section id="additional-parameters">
+<h4>Additional Parameters<a class="headerlink" href="#additional-parameters" title="Permalink to this heading"></a></h4>
+<p>Parameters from the ‘add_data’ method of the ‘BasePredictor’ parent
+class.</p>
+</section>
+<section id="id19">
+<h4>Raises<a class="headerlink" href="#id19" title="Permalink to this heading"></a></h4>
+<dl class="simple">
+<dt>AssertionError</dt><dd><p>If ‘x_data’ and ‘y_data’ do not comply with the requirements for new
+data points.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+</section>
+</dd></dl>
+
+</section>
+<section id="module-bill2watt.predictors.classification_predictor">
+<span id="bill2watt-predictors-classification-predictor-module"></span><h2>bill2watt.predictors.classification_predictor module<a class="headerlink" href="#module-bill2watt.predictors.classification_predictor" title="Permalink to this heading"></a></h2>
+<p>This module contains the ‘ClassificationPredictor’ class, which is used for
+predicting typical load profiles based on monthly time-of-use (ToU) energy
+consumption values, using training data and a classification approach.</p>
+<section id="id20">
+<h3>Notes<a class="headerlink" href="#id20" title="Permalink to this heading"></a></h3>
+</section>
+<section id="id21">
+<h3>Info<a class="headerlink" href="#id21" title="Permalink to this heading"></a></h3>
+<p>Author: G. Lorenti
+Email: <a class="reference external" href="mailto:gianmarco&#46;lorenti&#37;&#52;&#48;polito&#46;it">gianmarco<span>&#46;</span>lorenti<span>&#64;</span>polito<span>&#46;</span>it</a></p>
+</section>
+<dl class="py class">
+<dt class="sig sig-object py" id="bill2watt.predictors.classification_predictor.ClassificationPredictor">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bill2watt.predictors.classification_predictor.</span></span><span class="sig-name descname"><span class="pre">ClassificationPredictor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clustering</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">classifier</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bill2watt.predictors.classification_predictor.ClassificationPredictor" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#bill2watt.predictors.base_predictor.BasePredictor" title="bill2watt.predictors.base_predictor.BasePredictor"><code class="xref py py-class docutils literal notranslate"><span class="pre">BasePredictor</span></code></a></p>
+<p>This class implements a predictor for evaluating typical load profiles
+based on time-of-use (ToU) energy consumption values using training
+data in a classification and clustering approach.</p>
+<section id="id22">
+<h3>Parameters<a class="headerlink" href="#id22" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>x_data<span class="classifier">pandas.DataFrame or None</span></dt><dd><p>ToU energy consumption values of the training points.
+If None, default values are used.</p>
+</dd>
+<dt>y_data<span class="classifier">pandas.DataFrame or None</span></dt><dd><p>Typical load profiles of the training points.
+If None, default values are used.</p>
+</dd>
+<dt>clustering<span class="classifier">object</span></dt><dd><p>Clustering model object with <cite>fit</cite> and <cite>predict</cite> methods.</p>
+</dd>
+<dt>classifier<span class="classifier">object</span></dt><dd><p>Classification model object with <cite>fit</cite> and <cite>predict</cite> methods.</p>
+</dd>
+</dl>
+</section>
+<section id="id23">
+<h3>Attributes<a class="headerlink" href="#id23" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>x_data (property)<span class="classifier">pandas.DataFrame or None</span></dt><dd><p>ToU energy consumption values of the training points.
+If None, default values are used.</p>
+</dd>
+<dt>y_data (property)<span class="classifier">pandas.DataFrame or None</span></dt><dd><p>Typical load profiles of the training points.
+If None, default values are used.</p>
+</dd>
+</dl>
+</section>
+<section id="id24">
+<h3>Methods<a class="headerlink" href="#id24" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>predict(x)</dt><dd><p>Predict typical load profiles based on the provided inputs.</p>
+</dd>
+<dt>add_data(x, y)</dt><dd><p>Add new data points to the predictor.</p>
+</dd>
+</dl>
+</section>
+<section id="id25">
+<h3>See Also<a class="headerlink" href="#id25" title="Permalink to this heading"></a></h3>
+<p>BasePredictor : Base class for typical load profile predictors.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="bill2watt.predictors.classification_predictor.ClassificationPredictor.predict">
+<span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bill2watt.predictors.classification_predictor.ClassificationPredictor.predict" title="Permalink to this definition"></a></dt>
+<dd><p>Predict typical load profiles based on the provided inputs.</p>
+<section id="id26">
+<h4>Parameters<a class="headerlink" href="#id26" title="Permalink to this heading"></a></h4>
+<dl class="simple">
+<dt>x<span class="classifier">array-like</span></dt><dd><p>ToU energy consumption values of the point(s) to predict.</p>
+</dd>
+</dl>
+</section>
+<section id="id27">
+<h4>Returns<a class="headerlink" href="#id27" title="Permalink to this heading"></a></h4>
+<dl class="simple">
+<dt>np.ndarray</dt><dd><p>Predicted typical load profiles based on the provided inputs.</p>
+</dd>
+</dl>
+</section>
+<section id="id28">
+<h4>Notes<a class="headerlink" href="#id28" title="Permalink to this heading"></a></h4>
+<p>If ‘x’ refers to a single point, then the output is provided as a
+single point. If ‘x’ refers to multiple points, the output is provided
+as a matrix with the same number of rows as ‘x’.</p>
+</section>
+<section id="id29">
+<h4>Raises<a class="headerlink" href="#id29" title="Permalink to this heading"></a></h4>
+<dl class="simple">
+<dt>AssertionError</dt><dd><p>If any inconsistency is found in the input data.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bill2watt.predictors.classification_predictor.ClassificationPredictor.add_data">
+<span class="sig-name descname"><span class="pre">add_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_data</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bill2watt.predictors.classification_predictor.ClassificationPredictor.add_data" title="Permalink to this definition"></a></dt>
+<dd><p>Add new training points to the predictor and re-train the models.</p>
+<section id="id30">
+<h4>Parameters<a class="headerlink" href="#id30" title="Permalink to this heading"></a></h4>
+<dl class="simple">
+<dt>x_data<span class="classifier">array-like</span></dt><dd><p>ToU energy consumption values of the new data points.</p>
+</dd>
+<dt>y_data<span class="classifier">array-like</span></dt><dd><p>Typical load profiles of the new data points.</p>
+</dd>
+</dl>
+</section>
+<section id="id31">
+<h4>Additional parameters<a class="headerlink" href="#id31" title="Permalink to this heading"></a></h4>
+<p>Parameters from ‘add_data’ method of ‘BasePredictor’ parent class.</p>
+</section>
+<section id="id32">
+<h4>Raises<a class="headerlink" href="#id32" title="Permalink to this heading"></a></h4>
+<dl class="simple">
+<dt>AssertionError</dt><dd><p>If ‘x_data’ and ‘y_data’ do not comply with requirements for new
+data points.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+</section>
+</dd></dl>
+
+</section>
+<section id="module-bill2watt.predictors.flat_predictor">
+<span id="bill2watt-predictors-flat-predictor-module"></span><h2>bill2watt.predictors.flat_predictor module<a class="headerlink" href="#module-bill2watt.predictors.flat_predictor" title="Permalink to this heading"></a></h2>
+<p>Flat Predictor</p>
+<section id="description">
+<h3>Description<a class="headerlink" href="#description" title="Permalink to this heading"></a></h3>
+<p>This module contains the <cite>FlatPredictor</cite> class, which is used for predicting
+typical load profiles based on monthly time-of-use (ToU) energy consumption
+values, using a flat approach that spreads the consumption in each ToU tariff.</p>
+</section>
+<section id="id33">
+<h3>Notes<a class="headerlink" href="#id33" title="Permalink to this heading"></a></h3>
+<p>None.</p>
+</section>
+<section id="id34">
+<h3>Info<a class="headerlink" href="#id34" title="Permalink to this heading"></a></h3>
+<p>Author: G. Lorenti
+Email: <a class="reference external" href="mailto:gianmarco&#46;lorenti&#37;&#52;&#48;polito&#46;it">gianmarco<span>&#46;</span>lorenti<span>&#64;</span>polito<span>&#46;</span>it</a></p>
+</section>
+<dl class="py class">
+<dt class="sig sig-object py" id="bill2watt.predictors.flat_predictor.FlatPredictor">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bill2watt.predictors.flat_predictor.</span></span><span class="sig-name descname"><span class="pre">FlatPredictor</span></span><a class="headerlink" href="#bill2watt.predictors.flat_predictor.FlatPredictor" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#bill2watt.predictors.base_predictor.BasePredictor" title="bill2watt.predictors.base_predictor.BasePredictor"><code class="xref py py-class docutils literal notranslate"><span class="pre">BasePredictor</span></code></a></p>
+<p>Flat Predictor.</p>
+<p>This class implements a predictor for evaluating typical load profiles
+based on monthly time-of-use (ToU) energy consumption values using a flat
+approach that spreads the consumption in each ToU tariff.</p>
+<section id="id35">
+<h3>Parameters<a class="headerlink" href="#id35" title="Permalink to this heading"></a></h3>
+</section>
+<section id="id36">
+<h3>Attributes<a class="headerlink" href="#id36" title="Permalink to this heading"></a></h3>
+</section>
+<section id="id37">
+<h3>Methods<a class="headerlink" href="#id37" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>predict(x, nd)</dt><dd><p>Evaluate typical load profiles based on energy consumption values and
+number of days of each day-type.</p>
+</dd>
+</dl>
+</section>
+<section id="id38">
+<h3>See Also<a class="headerlink" href="#id38" title="Permalink to this heading"></a></h3>
+<p>BasePredictor : Base class for typical load profile predictors.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="bill2watt.predictors.flat_predictor.FlatPredictor.predict">
+<span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nd</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bill2watt.predictors.flat_predictor.FlatPredictor.predict" title="Permalink to this definition"></a></dt>
+<dd><p>Evaluate typical load profiles in multiple points, based on ToU energy
+consumption values, using a flat approach.</p>
+<section id="id39">
+<h4>Parameters<a class="headerlink" href="#id39" title="Permalink to this heading"></a></h4>
+<dl class="simple">
+<dt>x<span class="classifier">array-like</span></dt><dd><p>ToU energy consumption values of the point(s) to predict.</p>
+</dd>
+<dt>nd<span class="classifier">array-like</span></dt><dd><p>Number of days of each day-type for each point.</p>
+</dd>
+</dl>
+</section>
+<section id="id40">
+<h4>Returns<a class="headerlink" href="#id40" title="Permalink to this heading"></a></h4>
+<dl class="simple">
+<dt>np.ndarray</dt><dd><p>Predicted typical load profiles based on the provided inputs.</p>
+</dd>
+</dl>
+</section>
+<section id="id41">
+<h4>Notes<a class="headerlink" href="#id41" title="Permalink to this heading"></a></h4>
+<p>If ‘x’ (and other input parameters) refer to a single point, then
+the output is provided with a shape of a single point.</p>
+</section>
+<section id="id42">
+<h4>Raises<a class="headerlink" href="#id42" title="Permalink to this heading"></a></h4>
+<dl class="simple">
+<dt>AssertionError</dt><dd><p>If any inconsistency is found in the input data.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bill2watt.predictors.flat_predictor.FlatPredictor.add_data">
+<span class="sig-name descname"><span class="pre">add_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bill2watt.predictors.flat_predictor.FlatPredictor.add_data" title="Permalink to this definition"></a></dt>
+<dd><p>Add a data point to the predictor. This method is not supported by
+FlatPredictor and will raise an error unless ‘x_data’ and ‘y_data’
+are both None.</p>
+<section id="id43">
+<h4>Parameters<a class="headerlink" href="#id43" title="Permalink to this heading"></a></h4>
+<dl class="simple">
+<dt>x<span class="classifier">None</span></dt><dd><p>Energy consumption values of the data point.</p>
+</dd>
+<dt>y<span class="classifier">None</span></dt><dd><p>Corresponding load profile of the data point.</p>
+</dd>
+<dt><a href="#id44"><span class="problematic" id="id45">*</span></a>+kwargs<span class="classifier">dict</span></dt><dd><p>Additional parameters, added for compatibility.</p>
+</dd>
+</dl>
+</section>
+<section id="id46">
+<h4>Raises<a class="headerlink" href="#id46" title="Permalink to this heading"></a></h4>
+<dl class="simple">
+<dt>NotImplementedError</dt><dd><p>This method is not supported by FlatPredictor and cannot be used
+unless ‘x_data’ and ‘y_data’ are both None.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+</section>
+</dd></dl>
+
+</section>
+<section id="module-bill2watt.predictors.regression_predictor">
+<span id="bill2watt-predictors-regression-predictor-module"></span><h2>bill2watt.predictors.regression_predictor module<a class="headerlink" href="#module-bill2watt.predictors.regression_predictor" title="Permalink to this heading"></a></h2>
+<p>This module contains the ‘RegressionPredictor’ class, which is used for
+predicting typical load profiles based on monthly time-of-use (ToU) energy
+consumption values, using training data and a regression approach.</p>
+<section id="id47">
+<h3>Notes<a class="headerlink" href="#id47" title="Permalink to this heading"></a></h3>
+</section>
+<section id="id48">
+<h3>Info<a class="headerlink" href="#id48" title="Permalink to this heading"></a></h3>
+<p>Author: G. Lorenti
+Email: <a class="reference external" href="mailto:gianmarco&#46;lorenti&#37;&#52;&#48;polito&#46;it">gianmarco<span>&#46;</span>lorenti<span>&#64;</span>polito<span>&#46;</span>it</a></p>
+</section>
+<dl class="py class">
+<dt class="sig sig-object py" id="bill2watt.predictors.regression_predictor.RegressionPredictor">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bill2watt.predictors.regression_predictor.</span></span><span class="sig-name descname"><span class="pre">RegressionPredictor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">regressor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bill2watt.predictors.regression_predictor.RegressionPredictor" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#bill2watt.predictors.base_predictor.BasePredictor" title="bill2watt.predictors.base_predictor.BasePredictor"><code class="xref py py-class docutils literal notranslate"><span class="pre">BasePredictor</span></code></a></p>
+<p>This class implements a predictor for evaluating typical load profiles
+based on time-of-use (ToU) energy consumption values using training
+data in a regression approach.</p>
+<section id="id49">
+<h3>Parameters<a class="headerlink" href="#id49" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>x_data<span class="classifier">pandas.DataFrame or None</span></dt><dd><p>ToU energy consumption values of the training points.
+Since they are not used, can be also None.</p>
+</dd>
+<dt>y_data<span class="classifier">pandas.DataFrame or None</span></dt><dd><p>Typical load profiles of the training points.
+If None, default values are used.</p>
+</dd>
+<dt>regressor<span class="classifier">object</span></dt><dd><p>Regression model object with <cite>fit</cite> and <cite>predict</cite> methods.</p>
+</dd>
+</dl>
+</section>
+<section id="id50">
+<h3>Attributes<a class="headerlink" href="#id50" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>x_data (property)<span class="classifier">pandas.DataFrame or None</span></dt><dd><p>ToU energy consumption values of the training points.
+If None, default values are used.</p>
+</dd>
+<dt>y_data (property)<span class="classifier">pandas.DataFrame or None</span></dt><dd><p>Typical load profiles of the training points.
+If None, default values are used.</p>
+</dd>
+</dl>
+</section>
+<section id="id51">
+<h3>Methods<a class="headerlink" href="#id51" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>predict(x)</dt><dd><p>Predict typical load profiles based on the provided inputs.</p>
+</dd>
+<dt>add_data(x, y)</dt><dd><p>Add new data points to the predictor.</p>
+</dd>
+</dl>
+</section>
+<section id="id52">
+<h3>See Also<a class="headerlink" href="#id52" title="Permalink to this heading"></a></h3>
+<p>BasePredictor : Base class for typical load profile predictors.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="bill2watt.predictors.regression_predictor.RegressionPredictor.predict">
+<span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bill2watt.predictors.regression_predictor.RegressionPredictor.predict" title="Permalink to this definition"></a></dt>
+<dd><p>Predict typical load profiles based on the provided inputs.</p>
+<section id="id53">
+<h4>Parameters<a class="headerlink" href="#id53" title="Permalink to this heading"></a></h4>
+<dl class="simple">
+<dt>x<span class="classifier">array-like</span></dt><dd><p>ToU energy consumption values of the point(s) to predict.</p>
+</dd>
+</dl>
+</section>
+<section id="id54">
+<h4>Returns<a class="headerlink" href="#id54" title="Permalink to this heading"></a></h4>
+<dl class="simple">
+<dt>np.ndarray</dt><dd><p>Predicted typical load profiles based on the provided inputs.</p>
+</dd>
+</dl>
+</section>
+<section id="id55">
+<h4>Notes<a class="headerlink" href="#id55" title="Permalink to this heading"></a></h4>
+<p>If ‘x’ (and other input parameters) refer to a single point, then
+the output is provided with a shape of a single point.</p>
+</section>
+<section id="id56">
+<h4>Raises<a class="headerlink" href="#id56" title="Permalink to this heading"></a></h4>
+<dl class="simple">
+<dt>AssertionError</dt><dd><p>If any inconsistency is found in the input data.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bill2watt.predictors.regression_predictor.RegressionPredictor.add_data">
+<span class="sig-name descname"><span class="pre">add_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_data</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bill2watt.predictors.regression_predictor.RegressionPredictor.add_data" title="Permalink to this definition"></a></dt>
+<dd><p>Add new training points to the predictor and re-train the regressor.</p>
+<section id="id57">
+<h4>Parameters<a class="headerlink" href="#id57" title="Permalink to this heading"></a></h4>
+<dl class="simple">
+<dt>x_data<span class="classifier">array-like</span></dt><dd><p>ToU energy consumption values of the new data points.</p>
+</dd>
+<dt>y_data<span class="classifier">array-like</span></dt><dd><p>Typical load profiles of the new data points.</p>
+</dd>
+</dl>
+</section>
+<section id="id58">
+<h4>Additional parameters<a class="headerlink" href="#id58" title="Permalink to this heading"></a></h4>
+<p>Parameters from ‘add_data’ method of ‘BasePredictor’ parent class.</p>
+</section>
+<section id="id59">
+<h4>Raises<a class="headerlink" href="#id59" title="Permalink to this heading"></a></h4>
+<dl class="simple">
+<dt>AssertionError</dt><dd><p>If ‘x_data’ and ‘y_data’ do not comply with requirements for new
+data points.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+</section>
+</dd></dl>
+
+</section>
+<section id="module-bill2watt.predictors.slp_predictor">
+<span id="bill2watt-predictors-slp-predictor-module"></span><h2>bill2watt.predictors.slp_predictor module<a class="headerlink" href="#module-bill2watt.predictors.slp_predictor" title="Permalink to this heading"></a></h2>
+<p>This module contains the ‘SLPPredictor’ class, which is used for predicting
+typical load profiles based on monthly time-of-use (ToU) energy consumption
+values, using Standard Load Profiles (SPLs).</p>
+<section id="id60">
+<h3>Notes<a class="headerlink" href="#id60" title="Permalink to this heading"></a></h3>
+</section>
+<section id="id61">
+<h3>Info<a class="headerlink" href="#id61" title="Permalink to this heading"></a></h3>
+<p>Author: G. Lorenti
+Email: <a class="reference external" href="mailto:gianmarco&#46;lorenti&#37;&#52;&#48;polito&#46;it">gianmarco<span>&#46;</span>lorenti<span>&#64;</span>polito<span>&#46;</span>it</a></p>
+</section>
+<dl class="py class">
+<dt class="sig sig-object py" id="bill2watt.predictors.slp_predictor.SLPPredictor">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bill2watt.predictors.slp_predictor.</span></span><span class="sig-name descname"><span class="pre">SLPPredictor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bill2watt.predictors.slp_predictor.SLPPredictor" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#bill2watt.predictors.base_predictor.BasePredictor" title="bill2watt.predictors.base_predictor.BasePredictor"><code class="xref py py-class docutils literal notranslate"><span class="pre">BasePredictor</span></code></a></p>
+<p>This class implements a predictor for evaluating typical load profiles
+based on monthly time-of-use (ToU) energy consumption values, using
+Standard Load Profiles (SLPs).</p>
+<section id="id62">
+<h3>Parameters<a class="headerlink" href="#id62" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>x_data<span class="classifier">pandas.DataFrame or None</span></dt><dd><p>ToU energy consumption values associated with the SLPs.
+Since they are not used, can be also None.</p>
+</dd>
+<dt>y_data<span class="classifier">pandas.DataFrame or None</span></dt><dd><p>Typical load profiles of the Standard Load Profiles (SLPs).
+If None, default values are used.</p>
+</dd>
+</dl>
+</section>
+<section id="id63">
+<h3>Attributes<a class="headerlink" href="#id63" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>x_data (property)<span class="classifier">pandas.DataFrame or None</span></dt><dd><p>ToU energy consumption values of the training points.
+If None, default values are used.</p>
+</dd>
+<dt>y_data (property)<span class="classifier">pandas.DataFrame or None</span></dt><dd><p>Typical load profiles of the training points.
+If None, default values are used.</p>
+</dd>
+</dl>
+</section>
+<section id="id64">
+<h3>Methods<a class="headerlink" href="#id64" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>predict(x, key, nd=None, scaler=None)</dt><dd><p>Evaluate typical load profiles based on ToU energy consumption values
+and using the SLPs.</p>
+</dd>
+<dt>add_data(x, y)</dt><dd><p>Add new data points to the predictor.</p>
+</dd>
+</dl>
+</section>
+<section id="id65">
+<h3>See Also<a class="headerlink" href="#id65" title="Permalink to this heading"></a></h3>
+<p>BasePredictor : Base class for typical load profile predictors.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="bill2watt.predictors.slp_predictor.SLPPredictor.predict">
+<span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bill2watt.predictors.slp_predictor.SLPPredictor.predict" title="Permalink to this definition"></a></dt>
+<dd><p>Evaluate typical load profiles in multiple points, based on ToU energy
+consumption values, using the SLPs.</p>
+<section id="id66">
+<h4>Parameters<a class="headerlink" href="#id66" title="Permalink to this heading"></a></h4>
+<dl class="simple">
+<dt>x<span class="classifier">array-like</span></dt><dd><p>ToU energy consumption values of the point(s) to predict.</p>
+</dd>
+<dt>key<span class="classifier">tuple or list of tuples</span></dt><dd><p>Key values related to the SLP associated with each point.</p>
+</dd>
+</dl>
+</section>
+<section id="id67">
+<h4>Returns<a class="headerlink" href="#id67" title="Permalink to this heading"></a></h4>
+<dl class="simple">
+<dt>np.ndarray</dt><dd><p>Predicted typical load profiles based on the provided inputs.</p>
+</dd>
+</dl>
+</section>
+<section id="id68">
+<h4>Notes<a class="headerlink" href="#id68" title="Permalink to this heading"></a></h4>
+<p>If ‘x’ (and other input parameters) refer to a single point, then
+the output is provided with a shape of a single point.</p>
+</section>
+<section id="id69">
+<h4>Raises<a class="headerlink" href="#id69" title="Permalink to this heading"></a></h4>
+<dl class="simple">
+<dt>AssertionError</dt><dd><p>If any inconsistency is found in the input data or key values are
+not present in the model data.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+</section>
+</dd></dl>
+
+</section>
+<section id="module-bill2watt.predictors">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-bill2watt.predictors" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, G. Lorenti (CC-BY 4.0).</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

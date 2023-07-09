@@ -1,0 +1,7 @@
+bill2watt
+=========
+
+.. toctree::
+   :maxdepth: 4
+
+   bill2watt

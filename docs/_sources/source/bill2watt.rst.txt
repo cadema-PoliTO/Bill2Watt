@@ -1,0 +1,21 @@
+bill2watt package
+=================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   bill2watt.common
+   bill2watt.predictors
+   bill2watt.scaling
+   bill2watt.utils
+
+Module contents
+---------------
+
+.. automodule:: bill2watt
+   :members:
+   :undoc-members:
+   :show-inheritance:

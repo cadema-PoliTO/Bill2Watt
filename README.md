@@ -1,6 +1,6 @@
 # Bill2Watt
 
-*Bill2Watt* is a repository on GitHub that contains a Python package called *bill2watt*. The package focuses on data-driven prediction of hourly load profiles from time-of-use energy bills.
+*Bill2Watt* repository contains a Python package called *bill2watt*; whcih focuses on data-driven prediction of hourly load profiles from time-of-use energy bills. Additionally, the repository contains some show-case examples of how to use the package and data that can be used for testing various predictors (see licensing details [here](#license)).
 
 ## Description
 
@@ -24,12 +24,10 @@ The testing notebook can be used to have some insight on how the package 'bill2w
 To use the *bill2watt* package, follow these steps:
 
 1. Download or clone the repository to your local machine.
-2. Refer to the provided documentation (**soon coming**) to learn how to utilize the *bill2watt* package for predicting load profiles from time-of-use energy bills.
+2. Refer to the provided documentation (available [here](https://cadema-polito.github.io/Bill2Watt/index.html)) to learn how to utilize the *bill2watt* package for predicting load profiles from time-of-use energy bills.
 3. Run the Jupyter Notebook file [eda.ipynb](eda.ipynb) to access the exploratory data analysis (EDA) notebook and explore the dataset used for load profile analysis.
 4. Run the Jupyter Notebook file [tests.ipynb](tests.ipynb) to evaluate the various predictors in the *bill2watt* package and compare their performances based on various metrics.
 5. Additional examples and guides on using the *bill2watt* package will be provided soon.
-
-Please note that the package documentation will soon be available in the repository. 
 
 If you have any questions or need further assistance, please contact the project author.
 
